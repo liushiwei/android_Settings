@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"‏جب آپ یہ آلہ شروع کرنے کیلئے اپنا PIN داخل کریں گے تو <xliff:g id="SERVICE">%1$s</xliff:g> جیسی رسائی سروسز اس وقت ابھی دستیاب نہیں ہوں گی۔"</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"یہ آلہ شروع کرنے کیلئے جب آپ اپنا پیٹرن داخل کریں گے تو <xliff:g id="SERVICE">%1$s</xliff:g> جیسی رسائی سروسز اس وقت ابھی دستیاب نہیں ہوں گی۔"</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"اس آلہ کو شروع کرنے کیلئے جب آپ اپنا پاس ورڈ درج کریں گے تو <xliff:g id="SERVICE">%1$s</xliff:g> جیسی رسائی سروسز اس وقت ابھی دستیاب نہیں ہوں گی۔"</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"‏IMEI کی معلومات"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"‏IMEI سے متعلق معلومات"</string>
     <string name="slot_number" msgid="3762676044904653577">"(سلاٹ<xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

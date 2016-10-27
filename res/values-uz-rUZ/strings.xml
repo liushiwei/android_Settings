@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"Ushbu qurilmani ishga tushirish uchun PIN-kodni kiritganingizda, “<xliff:g id="SERVICE">%1$s</xliff:g>” kabi maxsus xizmatlar hali yoqilmagan bo‘ladi."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"Ushbu qurilmani ishga tushirish uchun chizmali parolni kiritganingizda, “<xliff:g id="SERVICE">%1$s</xliff:g>” kabi maxsus xizmatlar hali yoqilmagan bo‘ladi."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"Ushbu qurilmani ishga tushirish uchun parolni kiritganingizda, “<xliff:g id="SERVICE">%1$s</xliff:g>” kabi maxsus xizmatlar hali yoqilmagan bo‘ladi."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"IMEI ma’lumotlari"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"IMEI raqamiga aloqador ma’lumotlar"</string>
     <string name="slot_number" msgid="3762676044904653577">"(<xliff:g id="SLOT_NUM">%1$d</xliff:g>-uya)"</string>
 </resources>

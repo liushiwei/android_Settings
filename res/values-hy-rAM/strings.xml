@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"Երբ մուտքագրեք ձեր PIN-ը՝ այս սարքը մեկնարկելու համար, մատչելիության ծառայութունները, ինչպես օրինակ՝ <xliff:g id="SERVICE">%1$s</xliff:g>-ը, դեռևս հասանելի չեն լինի:"</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"Երբ մուտքագրեք ձեր նախշը՝ այս սարքը մեկնարկելու համար, մատչելիության ծառայութունները, ինչպես օրինակ՝ <xliff:g id="SERVICE">%1$s</xliff:g>-ը, դեռևս հասանելի չեն լինի:"</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"Երբ մուտքագրեք ձեր գաղտնաբառը՝ այս սարքը մեկնարկելու համար, մատչելիության ծառայութունները, ինչպես օրինակ՝ <xliff:g id="SERVICE">%1$s</xliff:g>-ը, դեռևս հասանելի չեն լինի:"</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"IMEI-ի վերաբերյալ տվյալներ"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"IMEI-ին վերաբերող տվյալներ"</string>
     <string name="slot_number" msgid="3762676044904653577">"(Սլոտ<xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

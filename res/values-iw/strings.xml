@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"‏כשתזין את מספר ה-PIN להפעלת המכשיר הזה, שירותי נגישות כמו <xliff:g id="SERVICE">%1$s</xliff:g> עדיין לא יהיו זמינים."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"כשתזין את קו ביטול הנעילה להפעלת המכשיר הזה, שירותי נגישות כמו <xliff:g id="SERVICE">%1$s</xliff:g> עדיין לא יהיו זמינים."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"כשתזין את הסיסמה להפעלת המכשיר הזה, שירותי נגישות כמו <xliff:g id="SERVICE">%1$s</xliff:g> עדיין לא יהיו זמינים."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"‏פרטי IMEI"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"‏מידע הקשור ל-IMEI"</string>
     <string name="slot_number" msgid="3762676044904653577">"(חריץ <xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

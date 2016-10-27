@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"ഈ ഉപകരണം ആരംഭിക്കാൻ PIN നൽകുന്ന സമയത്ത്, <xliff:g id="SERVICE">%1$s</xliff:g> പോലുള്ള പ്രവേശനക്ഷമത സേവനങ്ങൾ ലഭ്യമാകില്ല."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"ഈ ഉപകരണം ആരംഭിക്കാൻ പാറ്റേൺ നൽകുന്ന സമയത്ത്, <xliff:g id="SERVICE">%1$s</xliff:g> പോലുള്ള പ്രവേശനക്ഷമത സേവനങ്ങൾ ലഭ്യമാകില്ല."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"ഈ ഉപകരണം ആരംഭിക്കാൻ പാസ്‌വേഡ് നൽകുന്ന സമയത്ത്, <xliff:g id="SERVICE">%1$s</xliff:g> പോലുള്ള പ്രവേശനക്ഷമത സേവനങ്ങൾ ലഭ്യമാകില്ല."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"IMEI വിവരങ്ങൾ"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"IMEI അനുബന്ധ വിവരങ്ങൾ"</string>
     <string name="slot_number" msgid="3762676044904653577">"(സ്ലോട്ട്<xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

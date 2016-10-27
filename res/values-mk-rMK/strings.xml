@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"Кога ќе го внесете ПИН-кодот за да го вклучите уредот, услугите за пристапност како <xliff:g id="SERVICE">%1$s</xliff:g> сè уште нема да бидат достапни."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"Кога ќе ја внесете шемата за да го вклучите уредот, услугите за пристапност како <xliff:g id="SERVICE">%1$s</xliff:g> сè уште нема да бидат достапни."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"Кога ќе ја внесете лозинката за да го вклучите уредот, услугите за пристапност како <xliff:g id="SERVICE">%1$s</xliff:g> сè уште нема да бидат достапни."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"Информации за IMEI"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"Информации во врска со IMEI"</string>
     <string name="slot_number" msgid="3762676044904653577">"(Отвор<xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

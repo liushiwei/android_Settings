@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"Wanneer u uw pincode opgeeft om dit apparaat te starten, zijn toegankelijkheidsservices zoals <xliff:g id="SERVICE">%1$s</xliff:g> nog niet beschikbaar."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"Wanneer u uw patroon opgeeft om dit apparaat te starten, zijn toegankelijkheidsservices zoals <xliff:g id="SERVICE">%1$s</xliff:g> nog niet beschikbaar."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"Wanneer u uw wachtwoord opgeeft om dit apparaat te starten, zijn toegankelijkheidsservices zoals <xliff:g id="SERVICE">%1$s</xliff:g> nog niet beschikbaar."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"IMEI-informatie"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"Relatieve IMEI-informatie"</string>
     <string name="slot_number" msgid="3762676044904653577">"(Positie <xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

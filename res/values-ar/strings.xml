@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"عند إدخال رقم التعريف الشخصي لبدء هذا الجهاز، فلن تكون خدمات الدخول مثل <xliff:g id="SERVICE">%1$s</xliff:g> متاحة."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"عند إدخال نمط لبدء هذا الجهاز، فلن تكون خدمات الدخول مثل <xliff:g id="SERVICE">%1$s</xliff:g> متاحة."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"عند إدخال كلمة المرور لبدء هذا الجهاز، فلن تكون خدمات الدخول مثل <xliff:g id="SERVICE">%1$s</xliff:g> متاحة."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"‏معلومات IMEI"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"‏المعلومات ذات الصلة بـ IMEI"</string>
     <string name="slot_number" msgid="3762676044904653577">"(فتحة <xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

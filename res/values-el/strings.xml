@@ -2511,7 +2511,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"Κατά την εισαγωγή του PIN σας για την εκκίνηση αυτής της συσκευής, οι υπηρεσίες προσβασιμότητας, όπως το <xliff:g id="SERVICE">%1$s</xliff:g> δεν θα είναι διαθέσιμες ακόμη."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"Κατά την εισαγωγή του μοτίβου σας για την εκκίνηση αυτής της συσκευής, οι υπηρεσίες προσβασιμότητας, όπως το <xliff:g id="SERVICE">%1$s</xliff:g> δεν θα είναι διαθέσιμες ακόμη."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"Κατά την εισαγωγή του κωδικού πρόσβασής σας για την εκκίνηση αυτής της συσκευής, οι υπηρεσίες προσβασιμότητας, όπως το <xliff:g id="SERVICE">%1$s</xliff:g> δεν θα είναι διαθέσιμες ακόμη."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"Πληροφορίες IMEI"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"Σχετικές πληροφορίες IMEI"</string>
     <string name="slot_number" msgid="3762676044904653577">"(Υποδοχή <xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
 </resources>

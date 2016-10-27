@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"Kad ievadīsiet PIN kodu, lai sāknētu šo ierīci, pieejamības pakalpojumi, piemēram, <xliff:g id="SERVICE">%1$s</xliff:g>, vēl nebūs pieejami."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"Kad ievadīsiet kombināciju, lai sāknētu šo ierīci, pieejamības pakalpojumi, piemēram, <xliff:g id="SERVICE">%1$s</xliff:g>, vēl nebūs pieejami."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"Kad ievadīsiet paroli, lai sāknētu šo ierīci, pieejamības pakalpojumi, piemēram, <xliff:g id="SERVICE">%1$s</xliff:g>, vēl nebūs pieejami."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"IMEI informācija"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"Ar IMEI saistīta informācija"</string>
     <string name="slot_number" msgid="3762676044904653577">"(<xliff:g id="SLOT_NUM">%1$d</xliff:g>. slots)"</string>
 </resources>

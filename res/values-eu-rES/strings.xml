@@ -2509,7 +2509,6 @@
     <string name="encrypt_talkback_dialog_message_pin" msgid="1890374082842868489">"Gailua abiarazteko PIN kodea idazten duzunean, <xliff:g id="SERVICE">%1$s</xliff:g> bezalako erabilerraztasun-zerbitzuak ez dira erabilgarri egongo oraindik."</string>
     <string name="encrypt_talkback_dialog_message_pattern" msgid="4474332516537386384">"Gailua abiarazteko eredua marrazten duzunean, <xliff:g id="SERVICE">%1$s</xliff:g> bezalako erabilerraztasun-zerbitzuak ez dira erabilgarri egongo oraindik."</string>
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"Gailua abiarazteko pasahitza idazten duzunean, <xliff:g id="SERVICE">%1$s</xliff:g> bezalako erabilerraztasun-zerbitzuak ez dira erabilgarri egongo oraindik."</string>
-    <string name="imei_information_title" msgid="8499085421609752290">"IMEIari buruzko informazioa"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"IMEIari buruzko informazioa"</string>
     <string name="slot_number" msgid="3762676044904653577">"(<xliff:g id="SLOT_NUM">%1$d</xliff:g>. zirrikitua)"</string>
 </resources>

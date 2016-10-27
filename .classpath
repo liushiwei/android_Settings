@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="lib" path="E:/1_project/三星/android-common.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/bouncycastle.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/core-libart.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/ext.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/frame-core-util.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/framework.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/ims-common.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/jsr305.jar"/>
+	<classpathentry kind="lib" path="E:/1_project/三星/tel-common.jar"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
