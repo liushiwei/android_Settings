@@ -227,7 +227,7 @@
     <string name="radio_info_ppp_sent_label" msgid="5009102250704375687">"PPP sent:"</string>
     <string name="radio_info_radio_resets_label" msgid="9211343458143291617">"Radio resets:"</string>
     <string name="radio_info_message_waiting_label" msgid="6981842420058672207">"Message waiting:"</string>
-    <string name="radio_info_phone_number_label" msgid="7192944627907412169">"Phone number:"</string>
+    <string name="radio_info_phone_number_label" msgid="7192944627907412169">"Car number:"</string>
     <string name="radio_info_band_mode_label" msgid="441469694142042022">"Select radio band"</string>
     <string name="radio_info_network_type_label" msgid="3706382548257257987">"Network type:"</string>
     <string name="radio_info_set_perferred_label" msgid="9039200405863503267">"Set preferred network type:"</string>
@@ -269,8 +269,8 @@
     <string name="device_info_label" msgid="6551553813651711205">"Device info"</string>
     <string name="battery_info_label" msgid="4132685016148679403">"Battery info"</string>
     <string name="display_label" msgid="8074070940506840792">"Screen"</string>
-    <string name="phone_info_label" product="tablet" msgid="7820855350955963628">"Tablet info"</string>
-    <string name="phone_info_label" product="default" msgid="2127552523124277664">"Phone info"</string>
+    <string name="phone_info_label" product="tablet" msgid="7820855350955963628">"Car info"</string>
+    <string name="phone_info_label" product="default" msgid="2127552523124277664">"Car info"</string>
     <string name="sd_card_settings_label" product="nosdcard" msgid="8101475181301178428">"USB storage"</string>
     <string name="sd_card_settings_label" product="default" msgid="5743100901106177102">"SD card"</string>
     <string name="proxy_settings_label" msgid="3271174136184391743">"Proxy settings"</string>
@@ -870,8 +870,8 @@
     <item quantity="other" msgid="77103619544346451">"Incorrect SIM PIN code, you have <xliff:g id="NUMBER">%d</xliff:g> remaining attempt/s."</item>
   </plurals>
     <string name="pin_failed" msgid="1848423634948587645">"SIM PIN operation failed!"</string>
-    <string name="device_info_settings" product="tablet" msgid="1119755927536987178">"Tablet status"</string>
-    <string name="device_info_settings" product="default" msgid="475872867864762157">"Phone status"</string>
+    <string name="device_info_settings" product="tablet" msgid="1119755927536987178">"Car status"</string>
+    <string name="device_info_settings" product="default" msgid="475872867864762157">"Car status"</string>
     <string name="system_update_settings_list_item_title" msgid="3342887311059985961">"System updates"</string>
     <string name="system_update_settings_list_item_summary" msgid="3853057315907710747"></string>
     <string name="firmware_version" msgid="4801135784886859972">"Android version"</string>
@@ -1393,8 +1393,8 @@
     <string name="user_dict_settings_all_languages" msgid="6742000040975959247">"For all languages"</string>
     <string name="user_dict_settings_more_languages" msgid="7316375944684977910">"More languages…"</string>
     <string name="testing" msgid="6584352735303604146">"Testing"</string>
-    <string name="testing_phone_info" product="tablet" msgid="193561832258534798">"Tablet information"</string>
-    <string name="testing_phone_info" product="default" msgid="8656693364332840056">"Phone information"</string>
+    <string name="testing_phone_info" product="tablet" msgid="193561832258534798">"Car information"</string>
+    <string name="testing_phone_info" product="default" msgid="8656693364332840056">"Car information"</string>
     <string name="testing_battery_info" msgid="3497865525976497848">"Battery information"</string>
     <string name="quick_launch_title" msgid="7904609846945905306">"Quick launch"</string>
     <string name="quick_launch_summary" msgid="8101133819188001190">"Set keyboard shortcuts to launch apps"</string>
@@ -1638,8 +1638,8 @@
     <string name="power_bluetooth" msgid="4373329044379008289">"Bluetooth"</string>
     <string name="power_cell" msgid="6596471490976003056">"Mobile standby"</string>
     <string name="power_phone" msgid="5392641106474567277">"Voice calls"</string>
-    <string name="power_idle" product="tablet" msgid="4612478572401640759">"Tablet idle"</string>
-    <string name="power_idle" product="default" msgid="9055659695602194990">"Phone idle"</string>
+    <string name="power_idle" product="tablet" msgid="4612478572401640759">"Car idle"</string>
+    <string name="power_idle" product="default" msgid="9055659695602194990">"Car idle"</string>
     <string name="power_unaccounted" msgid="709925017022660740">"Miscellaneous"</string>
     <string name="power_overcounted" msgid="2762354976171358445">"Over-counted"</string>
     <string name="usage_type_cpu" msgid="715162150698338714">"CPU total"</string>
@@ -1647,8 +1647,8 @@
     <string name="usage_type_wake_lock" msgid="5125438890233677880">"Keep awake"</string>
     <string name="usage_type_gps" msgid="7989688715128160790">"GPS"</string>
     <string name="usage_type_wifi_running" msgid="3134357198266380400">"Wi‑Fi running"</string>
-    <string name="usage_type_phone" product="tablet" msgid="262638572890253393">"Tablet"</string>
-    <string name="usage_type_phone" product="default" msgid="9108247984998041853">"Phone"</string>
+    <string name="usage_type_phone" product="tablet" msgid="262638572890253393">"Car"</string>
+    <string name="usage_type_phone" product="default" msgid="9108247984998041853">"Car"</string>
     <string name="usage_type_data_send" msgid="8971710128438365919">"Mobile packets sent"</string>
     <string name="usage_type_data_recv" msgid="5468564329333954445">"Mobile packets received"</string>
     <string name="usage_type_radio_active" msgid="1732647857619420121">"Mobile radio active"</string>
@@ -2391,7 +2391,7 @@
     <string name="zen_mode_option_off" msgid="3167702608910820883">"Always interrupt"</string>
     <string name="zen_mode_option_important_interruptions" msgid="2320263300561981257">"Allow only priority interruptions"</string>
     <string name="zen_mode_option_no_interruptions" msgid="5664234817617301449">"Don\'t interrupt"</string>
-    <string name="ringtone_title" msgid="5379026328015343686">"Phone ringtone"</string>
+    <string name="ringtone_title" msgid="5379026328015343686">"Car ringtone"</string>
     <string name="notification_ringtone_title" msgid="3361201340352664272">"Default notification ringtone"</string>
     <string name="vibrate_when_ringing_title" msgid="3806079144545849032">"Also vibrate for calls"</string>
     <string name="notification_section_header" msgid="95661783916799134">"Notification"</string>

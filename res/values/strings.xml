@@ -588,9 +588,9 @@
     <!-- The title of the activity to adjust display settings -->
     <string name="display_label">Screen</string>
     <!-- The title of the activity to see phone info -->
-    <string name="phone_info_label" product="tablet">Tablet info</string>
+    <string name="phone_info_label" product="tablet">Car info</string>
     <!-- The title of the activity to see phone info -->
-    <string name="phone_info_label" product="default">Phone info</string>
+    <string name="phone_info_label" product="default">Car info</string>
     <!-- The title of the activity to adjust SD card settings [CHAR LIMIT=25] -->
     <string name="sd_card_settings_label" product="nosdcard">USB storage</string>
     <!-- The title of the activity to adjust SD card settings-->
@@ -2168,7 +2168,7 @@
     <!-- About tablet screen, summary of the item that takes you to tablet status screen -->
     <string name="device_status_summary" product="tablet">Status of the battery, network, and other information</string>
     <!-- About phone screen, summary of the item to go into the phone status screen -->
-    <string name="device_status_summary" product="default">Phone number, signal, etc.</string>
+    <string name="device_status_summary" product="default">Car number, signal, etc.</string>
     <!-- Main settings screen item's title to go into the storage settings screen [CHAR LIMIT=25] -->
     <string name="storage_settings" >Storage</string>
     <!-- Storage settings screen title -->
@@ -3307,9 +3307,9 @@
     <!-- This is for diagnostics screen. The title of a screen with various items realted to launching screens that will giev the user info. For example, it contains "Phone information" and "Battery information" -->
     <string name="testing">Testing</string>
     <!-- In the Testing screen.  The item title of the activity that shows a bunch of phone-related information.  -->
-    <string name="testing_phone_info" product="tablet">Tablet information</string>
+    <string name="testing_phone_info" product="tablet">Car information</string>
     <!-- In the Testing screen.  The item title of the activity that shows a bunch of phone-related information.  -->
-    <string name="testing_phone_info" product="default">Phone information</string>
+    <string name="testing_phone_info" product="default">Car information</string>
     <!-- In the Testing screen. The item title of the activity that shows a bunch of battery-related information.  -->
     <string name="testing_battery_info">Battery information</string>
     <!-- Do not translate. In the Testing screen. The item title of the activity that shows a bunch of SIM-related operations.  -->
@@ -3907,9 +3907,9 @@
     <!-- Label for power consumed by Calling -->
     <string name="power_phone">Voice calls</string>
     <!-- Label for power consumed when Idle -->
-    <string name="power_idle" product="tablet">Tablet idle</string>
+    <string name="power_idle" product="tablet">Car idle</string>
     <!-- Label for power consumed when Idle -->
-    <string name="power_idle" product="default">Phone idle</string>
+    <string name="power_idle" product="default">Car idle</string>
     <!-- Label for power that we aren't able to account for -->
     <string name="power_unaccounted">Miscellaneous</string>
     <!-- Label for power that we computed too much for -->
@@ -3926,9 +3926,9 @@
     <!-- [CHAR LIMIT=25] Label for WIFI usage time -->
     <string name="usage_type_wifi_running">Wi\u2011Fi running</string>
     <!-- Label for Phone usage time -->
-    <string name="usage_type_phone" product="tablet">Tablet</string>
+    <string name="usage_type_phone" product="tablet">Car</string>
     <!-- Label for Phone usage time -->
-    <string name="usage_type_phone" product="default">Phone</string>
+    <string name="usage_type_phone" product="default">Car</string>
     <!-- Label for mobile network data sent [CHAR LIMIT=32] -->
     <string name="usage_type_data_send">Mobile packets sent</string>
     <!-- Label for mobile network data received [CHAR LIMIT=32] -->
@@ -5688,7 +5688,7 @@
     <string name="zen_mode_option_no_interruptions">Don\'t interrupt</string>
 
     <!-- Sound & notification > Sound section: Title for the option defining the phone ringtone. [CHAR LIMIT=30] -->
-    <string name="ringtone_title">Phone ringtone</string>
+    <string name="ringtone_title">Car ringtone</string>
 
     <!-- Sound & notification > Sound section: Title for the option defining the default notification ringtone. [CHAR LIMIT=30] -->
     <string name="notification_ringtone_title">Default notification ringtone</string>

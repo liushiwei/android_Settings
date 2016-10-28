@@ -1169,11 +1169,12 @@ public class SettingsActivity extends Activity
                             .asInterface(ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE));
                     try {
                         if (!netManager.isBandwidthControlEnabled()) {
-                            removeTile = true;
+                            
                         }
                     } catch (RemoteException e) {
                         // ignored
                     }
+                    removeTile = true;
                 } else if (id == R.id.battery_settings) {
                     // Remove battery settings when battery is not available. (e.g. TV)
 
@@ -1184,6 +1185,7 @@ public class SettingsActivity extends Activity
                     if (!updateHomeSettingTiles(tile)) {
                         removeTile = true;
                     }
+                    removeTile = true;
                 } else if (id == R.id.user_settings) {
                     boolean hasMultipleUsers =
                             ((UserManager) getSystemService(Context.USER_SERVICE))
@@ -1210,13 +1212,16 @@ public class SettingsActivity extends Activity
                     boolean hasPrintingSupport = getPackageManager().hasSystemFeature(
                             PackageManager.FEATURE_PRINTING);
                     if (!hasPrintingSupport) {
-                        removeTile = true;
+                    	removeTile = true; 
                     }
+                    removeTile = true;
                 } else if (id == R.id.development_settings) {
                     if (!showDev || um.hasUserRestriction(
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
+                } else if(id == R.id.location_settings || id == R.id.security_settings || id == R.id.account_settings|| id == R.id.accessibility_settings || id == R.id.print_settings){
+                	removeTile = true;
                 }
 
                 if (UserHandle.MU_ENABLED && UserHandle.myUserId() != 0

@@ -1647,7 +1647,7 @@
     <string name="usage_type_wake_lock" msgid="5125438890233677880">"Hou wakker"</string>
     <string name="usage_type_gps" msgid="7989688715128160790">"GPS"</string>
     <string name="usage_type_wifi_running" msgid="3134357198266380400">"Wi-Fi aan"</string>
-    <string name="usage_type_phone" product="tablet" msgid="262638572890253393">"Tablet"</string>
+    <string name="usage_type_phone" product="tablet" msgid="262638572890253393">"Car"</string>
     <string name="usage_type_phone" product="default" msgid="9108247984998041853">"Foon"</string>
     <string name="usage_type_data_send" msgid="8971710128438365919">"Mobiele toestel-pakkette gestuur"</string>
     <string name="usage_type_data_recv" msgid="5468564329333954445">"Mobiele toestel-pakkette ontvang"</string>

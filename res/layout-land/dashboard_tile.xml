@@ -50,7 +50,8 @@
                           android:singleLine="true"
                           android:textAppearance="@style/TextAppearance.TileTitle"
                           android:ellipsize="marquee"
-                          android:fadingEdge="horizontal" />
+                          android:fadingEdge="horizontal"
+                          android:textColor="@android:color/white" />
 
                 <TextView android:id="@+id/status"
                           android:layout_width="wrap_content"
@@ -67,7 +68,7 @@
         <View android:id="@+id/tile_divider"
               android:layout_width="match_parent"
               android:layout_height="1dp"
-              android:background="?android:attr/dividerVertical" />
+              android:background="@android:color/white" />
 
     </LinearLayout>
 
