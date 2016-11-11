@@ -1220,7 +1220,7 @@ public class SettingsActivity extends Activity
                             UserManager.DISALLOW_DEBUGGING_FEATURES)) {
                         removeTile = true;
                     }
-                } else if(id == R.id.location_settings || id == R.id.security_settings || id == R.id.account_settings|| id == R.id.accessibility_settings || id == R.id.print_settings){
+                } else if( id == R.id.security_settings ||  id == R.id.accessibility_settings || id == R.id.print_settings){
                 	removeTile = true;
                 }
 
