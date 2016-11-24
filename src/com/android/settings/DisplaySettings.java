@@ -28,13 +28,13 @@ import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC;
 import static android.provider.Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL;
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
-
 import android.app.Activity;
 import android.app.ActivityManagerNative;
 import android.app.Dialog;
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.hardware.Sensor;
@@ -70,6 +70,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
+    private static final String KEY_BRIGHTNESS = "brightness";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -82,6 +83,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mLiftToWakePreference;
     private SwitchPreference mDozePreference;
     private SwitchPreference mAutoBrightnessPreference;
+    private Preference mBrightnessPreference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -99,6 +101,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         }
 
         mScreenTimeoutPreference = (ListPreference) findPreference(KEY_SCREEN_TIMEOUT);
+        mBrightnessPreference = findPreference(KEY_BRIGHTNESS);
+        mBrightnessPreference.setOnPreferenceClickListener(this);
+        removePreference(KEY_SCREEN_TIMEOUT);
         final long currentTimeout = Settings.System.getLong(resolver, SCREEN_OFF_TIMEOUT,
                 FALLBACK_SCREEN_TIMEOUT_VALUE);
         mScreenTimeoutPreference.setValue(String.valueOf(currentTimeout));
@@ -393,6 +398,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } else {
                 mFontSizePref.click();
             }
+        }
+        if(preference == mBrightnessPreference){
+        	getActivity().sendBroadcast(new Intent("com.george.settings.back_light"));
         }
         return false;
     }

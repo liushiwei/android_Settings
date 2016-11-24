@@ -23,7 +23,6 @@
                 android:key="brightness"
                 android:title="@string/brightness"
                 settings:keywords="@string/keywords_display_brightness_level">
-            <intent android:action="android.intent.action.SHOW_BRIGHTNESS_DIALOG" />
         </PreferenceScreen>
 
         <SwitchPreference
@@ -33,11 +32,7 @@
                 android:summary="@string/auto_brightness_summary"
                 android:persistent="false" />
 
-        <PreferenceScreen
-                android:key="wallpaper"
-                android:title="@string/wallpaper_settings_title"
-                settings:keywords="@string/keywords_display_wallpaper"
-                android:fragment="com.android.settings.WallpaperTypeSettings" />
+       
 
         <ListPreference
                 android:key="screen_timeout"
