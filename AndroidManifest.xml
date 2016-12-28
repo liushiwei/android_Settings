@@ -1,7 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="com.android.settings"
         coreApp="true"
-        android:sharedUserId="android.uid.system">
+        android:sharedUserId="android.uid.system"
+        android:versionName="0.1.0">
 
     <original-package android:name="com.android.settings" />
 
