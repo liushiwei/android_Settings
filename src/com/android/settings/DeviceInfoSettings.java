@@ -100,7 +100,15 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
         setValueSummary(KEY_EQUIPMENT_ID, PROPERTY_EQUIPMENT_ID);
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL);
-        setStringSummary(KEY_BUILD_NUMBER, Build.VERSION.INCREMENTAL+" V:"+getPackageManager().getPackageInfo(getActivity().getPackageName(), 0).versionName);
+        try{
+        	String version = SystemProperties.get("ro.system.build.version");
+        	if(version!=null&&version.length()>0)
+        		setStringSummary(KEY_BUILD_NUMBER, version);
+        	else
+        		setStringSummary(KEY_BUILD_NUMBER, Build.VERSION.INCREMENTAL);
+        }catch(Exception e){
+        	setStringSummary(KEY_BUILD_NUMBER, Build.VERSION.INCREMENTAL);
+        }
         findPreference(KEY_BUILD_NUMBER).setEnabled(true);
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
 
@@ -349,9 +357,10 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                     + " groups");
             return "Unavailable";
         }
-        return m.group(1) + "\n" +                 // 3.0.31-g6fb96c9
-            m.group(2) + " " + m.group(3) + "\n" + // x@y.com #1
-            m.group(4);                            // Thu Jun 28 11:02:39 PDT 2012
+        return m.group(1) ;
+//        return m.group(1) + "\n" +                 // 3.0.31-g6fb96c9
+//            m.group(2) + " " + m.group(3) + "\n" + // x@y.com #1
+//            m.group(4);                            // Thu Jun 28 11:02:39 PDT 2012
     }
 
     /**
