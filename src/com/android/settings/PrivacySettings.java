@@ -32,6 +32,7 @@ import android.os.UserManager;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
@@ -57,6 +58,8 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
     private static final String BACKUP_DATA = "backup_data";
     private static final String AUTO_RESTORE = "auto_restore";
     private static final String CONFIGURE_ACCOUNT = "configure_account";
+    private static final String MCU_UPGRADE = "mcu_upgrade";
+    private static final String CAR_SETTINGS = "car_settings";
     private static final String BACKUP_INACTIVE = "backup_inactive";
     private static final String PERSONAL_DATA_CATEGORY = "personal_data_category";
     private static final String TAG = "PrivacySettings";
@@ -65,6 +68,8 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
     private SwitchPreference mAutoRestore;
     private Dialog mConfirmDialog;
     private PreferenceScreen mConfigure;
+    private PreferenceScreen mMCUUpgrade;
+    private PreferenceScreen mCarSettings;
     private boolean mEnabled;
 
     private static final int DIALOG_ERASE_BACKUP = 2;
@@ -86,7 +91,11 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
 
         mBackup = (SwitchPreference) screen.findPreference(BACKUP_DATA);
         mBackup.setOnPreferenceChangeListener(preferenceChangeListener);
-
+        mCarSettings = (PreferenceScreen)screen.findPreference(CAR_SETTINGS);
+        mCarSettings.setOnPreferenceClickListener(mClickListener);
+        mMCUUpgrade = (PreferenceScreen)screen.findPreference(MCU_UPGRADE);
+        mMCUUpgrade.setOnPreferenceClickListener(mClickListener);
+        
         mAutoRestore = (SwitchPreference) screen.findPreference(AUTO_RESTORE);
         mAutoRestore.setOnPreferenceChangeListener(preferenceChangeListener);
 
@@ -112,6 +121,21 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
         }
         updateToggles();
     }
+    
+    private OnPreferenceClickListener mClickListener = new OnPreferenceClickListener(){
+
+		@Override
+		public boolean onPreferenceClick(Preference preference) {
+			 if(preference == mMCUUpgrade){
+		        	getActivity().sendBroadcast(new Intent("com.george.settings.mcu_update"));
+		        }
+			 if(preference == mCarSettings){
+		        	getActivity().sendBroadcast(new Intent("com.george.settings.car_settings"));
+		        }
+			return false;
+		}
+    	
+    };
 
     @Override
     public void onResume() {

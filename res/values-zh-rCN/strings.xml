@@ -2511,4 +2511,6 @@
     <string name="encrypt_talkback_dialog_message_password" msgid="8166099418487083927">"当您输入密码以启动此设备时，<xliff:g id="SERVICE">%1$s</xliff:g>等无障碍服务还未开启。"</string>
     <string name="imei_information_summary" msgid="2074095606556565233">"IMEI相关信息"</string>
     <string name="slot_number" msgid="3762676044904653577">"（插槽<xliff:g id="SLOT_NUM">%1$d</xliff:g>）"</string>
+    <string name="car_settings">车辆设定</string>
+	<string name="mcu_upgrade">MCU 升级</string>
 </resources>

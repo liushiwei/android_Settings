@@ -52,7 +52,7 @@
                 android:selectable="false" />
 
     </PreferenceCategory>
-
+    
     <PreferenceCategory android:key="personal_data_category"
             android:title="@string/personal_data_section_title">
 
@@ -64,5 +64,16 @@
             android:fragment="com.android.settings.MasterClear" />
 
     </PreferenceCategory>
+    
+    <PreferenceScreen
+                android:key="mcu_upgrade"
+                android:title="@string/mcu_upgrade"
+                settings:keywords="@string/mcu_upgrade">
+    </PreferenceScreen>
+    <PreferenceScreen
+                android:key="car_settings"
+                android:title="@string/car_settings"
+                settings:keywords="@string/car_settings">
+    </PreferenceScreen>
 
 </PreferenceScreen>
