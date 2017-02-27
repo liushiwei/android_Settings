@@ -105,7 +105,8 @@
          details of Theme, we can't reference any local resources and MUST instead use the values
          directly. So use #ff263238 instead of @color/theme_primary and so on. -->
           <!-- Default theme for Settings and activities launched from Settings. -->
-    <style name="Theme.Material.Settings" parent="@android:style/Theme.Material.Settings">
+    <style name="Theme.Material.Settings" parent="@android:style/Theme.Material">
+        <item name="ic_menu_add">@drawable/ic_menu_add_dark</item>
         <item name="@*android:colorBackground">#282648</item>
     </style>
     <style name="Theme.SettingsBase" parent="Theme.Material.Settings" />
