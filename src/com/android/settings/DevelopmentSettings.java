@@ -67,6 +67,8 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 import com.android.settings.widget.SwitchBar;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -142,6 +144,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String SELECT_LOGD_SIZE_KEY = "select_logd_size";
     private static final String SELECT_LOGD_SIZE_PROPERTY = "persist.logd.size";
     private static final String SELECT_LOGD_DEFAULT_SIZE_PROPERTY = "ro.logd.size";
+    
+    private static final String AUDIO_CHANNEL_KEY = "audio_channel";
 
     private static final String OPENGL_TRACES_KEY = "enable_opengl_traces";
 
@@ -220,6 +224,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private ListPreference mAnimatorDurationScale;
     private ListPreference mOverlayDisplayDevices;
     private ListPreference mOpenGLTraces;
+    
+    private ListPreference mAudioChannel;
 
     private ListPreference mSimulateColorSpace;
 
@@ -337,6 +343,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mWifiAggressiveHandover = findAndInitSwitchPref(WIFI_AGGRESSIVE_HANDOVER_KEY);
         mWifiAllowScansWithTraffic = findAndInitSwitchPref(WIFI_ALLOW_SCAN_WITH_TRAFFIC_KEY);
         mLogdSize = addListPreference(SELECT_LOGD_SIZE_KEY);
+        
+        mAudioChannel = addListPreference(AUDIO_CHANNEL_KEY);
 
         mWindowAnimationScale = addListPreference(WINDOW_ANIMATION_SCALE_KEY);
         mTransitionAnimationScale = addListPreference(TRANSITION_ANIMATION_SCALE_KEY);
@@ -493,6 +501,19 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         final Context context = getActivity();
         final ContentResolver cr = context.getContentResolver();
         mHaveDebugSettings = false;
+        try{
+        	if(Settings.Global.getInt(cr, Settings.Global.ADB_ENABLED, 0) != 0){
+        		 FileOutputStream out = new FileOutputStream(new File("/sys/class/gpio/gpio52/value"));
+                 out.write('1');
+                 out.close();
+        	}else{
+        		FileOutputStream out = new FileOutputStream(new File("/sys/class/gpio/gpio52/value"));
+                out.write('0');
+                out.close();
+        	}
+        }catch(Exception e){
+        	
+        }
         updateSwitchPreference(mEnableAdb, Settings.Global.getInt(cr,
                 Settings.Global.ADB_ENABLED, 0) != 0);
         if (mEnableTerminal != null) {
@@ -987,6 +1008,14 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         }
         return false;
     }
+    private void writeAudioChannel(Object value) {
+    	try{
+    		FileOutputStream out = new FileOutputStream(new File("/sys/devices/platform/alc5623-audio.1/aud_ch"));
+            out.write(((String)value).getBytes()[0]);
+            out.close();
+    	}catch(Exception e){
+    	}
+    }
 
     private void writeSimulateColorSpace(Object value) {
         final ContentResolver cr = getContentResolver();
@@ -1363,6 +1392,12 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                         .show();
                 mAdbDialog.setOnDismissListener(this);
             } else {
+            	try{
+                		FileOutputStream out = new FileOutputStream(new File("/sys/class/gpio/gpio52/value"));
+                        out.write('0');
+                        out.close();
+                }catch(Exception e){
+                }
                 Settings.Global.putInt(getActivity().getContentResolver(),
                         Settings.Global.ADB_ENABLED, 0);
                 mVerifyAppsOverUsb.setEnabled(false);
@@ -1508,6 +1543,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         } else if (preference == mSimulateColorSpace) {
             writeSimulateColorSpace(newValue);
             return true;
+        } else if( preference == mAudioChannel){
+        	writeAudioChannel(newValue);
+        	return true;
         }
         return false;
     }
@@ -1533,11 +1571,24 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 mDialogClicked = true;
                 Settings.Global.putInt(getActivity().getContentResolver(),
                         Settings.Global.ADB_ENABLED, 1);
+                try{
+                		 FileOutputStream out = new FileOutputStream(new File("/sys/class/gpio/gpio52/value"));
+                         out.write('1');
+                         out.close();
+                }catch(Exception e){
+                }
                 mVerifyAppsOverUsb.setEnabled(true);
                 updateVerifyAppsOverUsbOptions();
                 updateBugreportOptions();
             } else {
                 // Reset the toggle
+            	try{
+                		FileOutputStream out = new FileOutputStream(new File("/sys/class/gpio/gpio52/value"));
+                        out.write('0');
+                        out.close();
+                }catch(Exception e){
+                	
+                }
                 mEnableAdb.setChecked(false);
             }
         } else if (dialog == mAdbKeysDialog) {

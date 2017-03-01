@@ -1260,4 +1260,14 @@
         <item>Pink</item>
         <item>Red</item>
     </string-array>
+    <string-array name="audio_channel">
+        <item >ARM</item>
+        <item >声道一</item>
+        <item >声道二</item>
+    </string-array>
+    <string-array name="audio_channel_values" >
+        <item >0</item>
+        <item >1</item>
+        <item >2</item>
+    </string-array>
 </resources>

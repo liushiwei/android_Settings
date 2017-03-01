@@ -16,6 +16,12 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/development_settings_title">
+         <ListPreference
+            android:key="audio_channel"
+            android:title="@string/audio_channel"
+            android:entries="@array/audio_channel"
+            android:entryValues="@array/audio_channel_values" />
+    
     <com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"

@@ -6051,4 +6051,5 @@
 	<string name="car_settings">Automobile Settings</string>
 	<string name="mcu_upgrade">MCU Upgrade</string>
 	
+	<string name="audio_channel">声道切换</string>
 </resources>
