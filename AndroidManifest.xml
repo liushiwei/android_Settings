@@ -83,7 +83,7 @@
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
             android:taskAffinity=""
-            android:theme="@style/Theme.Settings"
+            android:theme="@style/Theme.NewSettings"
             android:hardwareAccelerated="true"
             android:requiredForAllUsers="true"
             android:supportsRtl="true"
@@ -92,6 +92,13 @@
         <!-- Settings -->
 
         <activity android:name="Settings"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/settings_label_launcher"
+                android:launchMode="singleTask">
+            
+        </activity>
+        
+         <activity android:name="NewSettings"
                 android:taskAffinity="com.android.settings"
                 android:label="@string/settings_label_launcher"
                 android:launchMode="singleTask">
@@ -109,6 +116,14 @@
                 android:label="@string/settings_label_launcher"
                 android:launchMode="singleTask"
                 android:targetActivity="Settings">
+            
+        </activity-alias>
+         <activity-alias android:name="Settings"
+                android:taskAffinity="com.android.settings"
+                android:label="@string/new_settings_label_launcher"
+                android:launchMode="singleTask"
+                android:targetActivity="NewSettings"
+                android:theme="@style/Theme.NewSettings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -125,7 +140,8 @@
 
         <activity android:name=".SubSettings"
                 android:taskAffinity="com.android.settings"
-                android:parentActivityName="Settings">
+                android:parentActivityName="Settings"
+                android:theme="@style/Theme.NewSettings">
         </activity>
 
         <activity android:name="CreateShortcut" android:label="@string/settings_shortcut"

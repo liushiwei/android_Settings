@@ -18,6 +18,7 @@ package com.android.settings.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
@@ -101,6 +102,7 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
 
         // Default is hide
         setVisibility(View.GONE);
+        setBackgroundColor(Color.parseColor("#333333"));
     }
 
     public void setTextViewLabel(boolean isChecked) {

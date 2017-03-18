@@ -627,6 +627,7 @@
     <string name="settings_label">Settings</string>
     <!-- Title of the Settings activity shown in the Launcher. [CHAR LIMIT=20] -->
     <string name="settings_label_launcher">Settings</string>
+    <string name="new_settings_label_launcher">NewSettings</string>
     <!-- Label for option to select a settings panel as a shortcut -->
     <string name="settings_shortcut">Settings shortcut</string>
     <!-- Wireless controls settings screen, setting check box label -->
@@ -6052,4 +6053,6 @@
 	<string name="mcu_upgrade">MCU Upgrade</string>
 	
 	<string name="audio_channel">声道切换</string>
+    <string name="change_usb_mode">USB工作模式切换</string>
+    <string name="abbrev_wday_month_day_no_year">yyyyEEEMMMMd</string>
 </resources>

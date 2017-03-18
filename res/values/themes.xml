@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
     <attr name="ic_menu_add" format="reference" />
     <attr name="ic_menu_moreoverflow" format="reference" />
     <attr name="ic_wps" format="reference" />
@@ -146,12 +146,22 @@
         <!-- For the TimePicker -->
         <item name="@android:timePickerStyle">@style/Widget.TimePicker</item>
     </style>
+    
+     <style name="Theme.NewSettings" parent="Theme.Settings">
+         <item name="android:windowFullscreen">true</item>
+         <item name="android:windowContentOverlay">@null</item>
+         <item name="android:windowActionBar">false</item>
+         <item name="android:windowNoTitle">true</item>
+     </style>
 
     <style name="Theme.SubSettings" parent="Theme.Settings">
         <!-- Redefine the ActionBar style for contentInsetStart -->
-        <item name="android:actionBarStyle">@style/Theme.ActionBar.SubSettings</item>
-
-        <item name="switchBarTheme">@style/Theme.SwitchBar.SubSettings</item>
+        <item name="android:windowFullscreen">true</item>
+         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionBar">false</item>
+         <item name="android:windowNoTitle">true</item>
+        <item name="switchBarTheme">@style/Theme.SwitchBar.NewSubSettings</item>
+        <item name="preferenceBackgroundColor">@android:color/black</item>
     </style>
 
     <style name="Theme.ActionBar" parent="@android:style/Widget.Material.Light.ActionBar.Solid">
@@ -168,6 +178,10 @@
     </style>
 
     <style name="Theme.SwitchBar.SubSettings" parent="@android:style/Theme.Material">
+        <item name="switchBarMarginStart">@dimen/switchbar_subsettings_margin_start</item>
+        <item name="switchBarMarginEnd">@dimen/switchbar_subsettings_margin_end</item>
+    </style>
+     <style name="Theme.SwitchBar.NewSubSettings" parent="@android:style/Theme.Material">
         <item name="switchBarMarginStart">@dimen/switchbar_subsettings_margin_start</item>
         <item name="switchBarMarginEnd">@dimen/switchbar_subsettings_margin_end</item>
     </style>
