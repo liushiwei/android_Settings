@@ -511,7 +511,7 @@ public class NewSettingsActivity extends Activity
         final ComponentName cn = intent.getComponent();
         final String className = cn.getClassName();
 
-        mIsShowingDashboard = className.equals(Settings.class.getName());
+        mIsShowingDashboard = className.equals(NewSettings.class.getName());
 
         // This is a "Sub Settings" when:
         // - this is a real SubSettings

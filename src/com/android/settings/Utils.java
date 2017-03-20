@@ -683,7 +683,7 @@ public final class Utils {
             Bundle args, String titleResPackageName, int titleResId, CharSequence title,
             boolean isShortcut) {
         Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.setClass(context, SubSettings.class);
+        intent.setClass(context,context.getClass().equals(NewSettings.class)?NewSubSettings.class:SubSettings.class);
         intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT, fragmentName);
         intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT_ARGUMENTS, args);
         intent.putExtra(SettingsActivity.EXTRA_SHOW_FRAGMENT_TITLE_RES_PACKAGE_NAME,

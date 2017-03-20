@@ -230,5 +230,5 @@
     <!-- Color picker -->
     <dimen name="color_swatch_size">16dp</dimen>
     <dimen name="color_swatch_stroke_width">4dp</dimen>
-
+	<dimen name="key_button_ripple_max_width">95dp</dimen>
 </resources>

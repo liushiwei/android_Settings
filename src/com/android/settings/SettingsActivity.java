@@ -75,6 +75,7 @@ import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
 import com.android.settings.dashboard.DashboardTile;
+import com.android.settings.dashboard.NewDashboardSummary;
 import com.android.settings.dashboard.NoHomeDialogFragment;
 import com.android.settings.dashboard.SearchResultsSummary;
 import com.android.settings.deviceinfo.Memory;
@@ -508,7 +509,7 @@ public class SettingsActivity extends Activity
         final ComponentName cn = intent.getComponent();
         final String className = cn.getClassName();
 
-        mIsShowingDashboard = className.equals(Settings.class.getName());
+        mIsShowingDashboard = className.equals(Settings.class.getName())||className.equals(NewSettings.class.getName());
 
         // This is a "Sub Settings" when:
         // - this is a real SubSettings
@@ -527,7 +528,7 @@ public class SettingsActivity extends Activity
         }
 
         setContentView(mIsShowingDashboard ?
-                R.layout.settings_main_dashboard : R.layout.settings_main_prefs);
+                R.layout.settings_main_dashboard : className.equals(NewSubSettings.class.getName())?R.layout.new_settings_main_prefs:R.layout.settings_main_prefs);
 
         mContent = (ViewGroup) findViewById(R.id.main_content);
 
@@ -580,9 +581,9 @@ public class SettingsActivity extends Activity
                 // No UP affordance if we are displaying the main Dashboard
                 mDisplayHomeAsUpEnabled = false;
                 // Show Search affordance
-                mDisplaySearch = true;
+                mDisplaySearch = false;
                 mInitialTitleResId = R.string.dashboard_title;
-                switchToFragment(DashboardSummary.class.getName(), null, false, false,
+                switchToFragment(className.equals(NewSettings.class.getName())?NewDashboardSummary.class.getName():DashboardSummary.class.getName(), null, false, false,
                         mInitialTitleResId, mInitialTitle, false);
             }
         }

@@ -20,6 +20,7 @@ import java.util.List;
 
 import com.android.settings.NewSettingsActivity;
 import com.android.settings.R;
+import com.android.settings.SettingsActivity;
 
 import android.app.Fragment;
 import android.content.BroadcastReceiver;
@@ -110,7 +111,7 @@ public class NewDashboardSummary extends Fragment {
         mDashboard.removeAllViews();
 
         List<DashboardCategory> categories =
-                ((NewSettingsActivity) context).getDashboardCategories(true);
+                ((SettingsActivity) context).getDashboardCategories(true);
 
         final int count = categories.size();
 

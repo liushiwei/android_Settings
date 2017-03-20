@@ -21,7 +21,7 @@ import com.android.settings.applications.AppOpsSummary;
 /**
  * Top-level Settings activity
  */
-public class NewSettings extends NewSettingsActivity {
+public class NewSettings extends SettingsActivity {
 
     /*
     * Settings subclasses for launching independently.
