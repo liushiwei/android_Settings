@@ -61,6 +61,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.android.internal.util.ArrayUtils;
 import com.android.internal.util.XmlUtils;
@@ -672,6 +673,9 @@ public class SettingsActivity extends Activity
                             0 /* flags */, new UserHandle(UserHandle.myUserId()));
                     mInitialTitle = authContext.getResources().getText(mInitialTitleResId);
                     setTitle(mInitialTitle);
+                    TextView title= (TextView) findViewById(R.id.setting_title);
+                    if(title!=null)
+                    	title.setText(mInitialTitle);
                     mInitialTitleResId = -1;
                     return;
                 } catch (NameNotFoundException e) {
@@ -679,6 +683,9 @@ public class SettingsActivity extends Activity
                 }
             } else {
                 setTitle(mInitialTitleResId);
+                TextView title= (TextView) findViewById(R.id.setting_title);
+                if(title!=null)
+                	title.setText(mInitialTitleResId);
             }
         } else {
             mInitialTitleResId = -1;
