@@ -515,7 +515,7 @@ public class SettingsActivity extends Activity
         // This is a "Sub Settings" when:
         // - this is a real SubSettings
         // - or :settings:show_fragment_as_subsetting is passed to the Intent
-        final boolean isSubSettings = className.equals(SubSettings.class.getName()) ||
+        final boolean isSubSettings = className.equals(SubSettings.class.getName()) ||className.equals(NewSubSettings.class.getName())||
                 intent.getBooleanExtra(EXTRA_SHOW_FRAGMENT_AS_SUBSETTING, false);
 
         // If this is a sub settings, then apply the SubSettings Theme for the ActionBar content insets
@@ -524,7 +524,7 @@ public class SettingsActivity extends Activity
             final int themeResId = getThemeResId();
             if (themeResId != R.style.Theme_DialogWhenLarge &&
                     themeResId != R.style.Theme_SubSettingsDialogWhenLarge) {
-                setTheme(R.style.Theme_SubSettings);
+                setTheme(className.equals(NewSubSettings.class.getName())?R.style.Theme_NewSubSettings:R.style.Theme_SubSettings);
             }
         }
 
@@ -982,8 +982,10 @@ public class SettingsActivity extends Activity
      * @param categories The list in which to place the tiles categories.
      */
     private void buildDashboardCategories(List<DashboardCategory> categories) {
+        final String className =  getIntent().getComponent().getClassName();
+
         categories.clear();
-        loadCategoriesFromResource(R.xml.dashboard_categories, categories);
+        loadCategoriesFromResource(className.equals(NewSettings.class.getName())?R.xml.new_dashboard_categories:R.xml.dashboard_categories, categories);
         updateTilesList(categories);
     }
 

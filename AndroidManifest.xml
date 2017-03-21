@@ -94,8 +94,12 @@
         <activity android:name="Settings"
                 android:taskAffinity="com.android.settings"
                 android:label="@string/settings_label_launcher"
-                android:launchMode="singleTask">
-            
+                android:launchMode="singleTask"
+                android:theme="@style/Theme.Settings">
+            <intent-filter>
+                <action android:name="android.settings.OLDSETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
         
          <activity android:name="NewSettings"
@@ -120,7 +124,7 @@
         </activity-alias>
          <activity-alias android:name="NewSettings"
                 android:taskAffinity="com.android.settings"
-                android:label="@string/new_settings_label_launcher"
+                android:label="@string/settings_label_launcher"
                 android:launchMode="singleTask"
                 android:targetActivity="NewSettings"
                 android:theme="@style/Theme.NewSettings">
