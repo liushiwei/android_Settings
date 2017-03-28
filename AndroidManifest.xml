@@ -151,7 +151,7 @@
 		<activity android:name=".NewSubSettings"
                 android:taskAffinity="com.android.settings"
                 android:parentActivityName="NewSettings"
-                android:theme="@style/Theme.SubSettings">
+                android:theme="@style/Theme.Settings">
         </activity>
         <activity android:name="CreateShortcut" android:label="@string/settings_shortcut"
             android:theme="@style/Theme.SubSettingsDialogWhenLarge">

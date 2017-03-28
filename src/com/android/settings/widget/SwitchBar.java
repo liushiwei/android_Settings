@@ -27,6 +27,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import android.widget.Switch;
@@ -50,6 +51,7 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
 
     private ToggleSwitch mSwitch;
     private TextView mTextView;
+    private ImageButton mWifiPlus;
 
     private ArrayList<OnSwitchChangeListener> mSwitchChangeListeners =
             new ArrayList<OnSwitchChangeListener>();
@@ -78,7 +80,7 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
         int switchBarMarginStart = (int) a.getDimension(0, 0);
         int switchBarMarginEnd = (int) a.getDimension(1, 0);
         a.recycle();
-
+        mWifiPlus = (ImageButton) findViewById(R.id.wifi_plus);
         mTextView = (TextView) findViewById(R.id.switch_text);
         mTextView.setText(R.string.switch_off_text);
         ViewGroup.MarginLayoutParams lp = (MarginLayoutParams) mTextView.getLayoutParams();
@@ -94,6 +96,7 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
         addOnSwitchChangeListener(new OnSwitchChangeListener() {
             @Override
             public void onSwitchChanged(Switch switchView, boolean isChecked) {
+            	mWifiPlus.setEnabled(isChecked);
                 setTextViewLabel(isChecked);
             }
         });
@@ -127,6 +130,7 @@ public class SwitchBar extends LinearLayout implements CompoundButton.OnCheckedC
         super.setEnabled(enabled);
         mTextView.setEnabled(enabled);
         mSwitch.setEnabled(enabled);
+        mWifiPlus.setEnabled(enabled);
     }
 
     public final ToggleSwitch getSwitch() {

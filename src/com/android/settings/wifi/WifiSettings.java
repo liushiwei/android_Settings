@@ -53,10 +53,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView.AdapterContextMenuInfo;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.settings.NewSubSettings;
 import com.android.settings.R;
 import com.android.settings.RestrictedSettingsFragment;
 import com.android.settings.SettingsActivity;
@@ -362,6 +365,23 @@ public class WifiSettings extends RestrictedSettingsFragment
     @Override
     public void onResume() {
         final Activity activity = getActivity();
+        if(activity instanceof NewSubSettings){
+        	ImageButton wifi_plus = (ImageButton) activity.findViewById(R.id.wifi_plus);
+        	wifi_plus.setVisibility(View.VISIBLE);
+        	wifi_plus.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View arg0) {
+					 if (mWifiEnabler != null) {
+						 if(mWifiManager.isWifiEnabled())
+			                    onAddNetworkPressed();
+						 else{
+							 arg0.setEnabled(false);
+						 }
+				        }
+				}
+			});
+        }
         super.onResume();
         if (mWifiEnabler != null) {
             mWifiEnabler.resume(activity);
