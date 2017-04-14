@@ -86,6 +86,14 @@
                 android:fragment="com.android.settings.DateTimeSettings"
                 android:icon="@drawable/ic_settings_date_time"
                 />
+        
+        <dashboard-tile
+                android:id="@+id/car_settings"
+                android:title="@string/car_settings"
+                android:icon="@drawable/ic_settings_accessibility"
+                android:fragment="com.android.settings.CarSettings"
+                >
+        </dashboard-tile>
 
     	<dashboard-tile
                 android:id="@+id/old_settings"

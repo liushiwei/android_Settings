@@ -2513,4 +2513,6 @@
     <string name="slot_number" msgid="3762676044904653577">"（插槽<xliff:g id="SLOT_NUM">%1$d</xliff:g>）"</string>
     <string name="car_settings">车辆设定</string>
 	<string name="mcu_upgrade">MCU 升级</string>
+	<string name="navigation_choice_title">导航应用选择</string>
+    <string name="navigation_choice_summary">选择你要使用的导航软件</string>
 </resources>

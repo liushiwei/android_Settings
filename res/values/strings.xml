@@ -6058,4 +6058,6 @@
      <string name="back_btn_title">BACK/返回</string>
      <string name="home_btn_title">HOME/主页</string>
      <string name="old_settings">高级</string>
+     <string name="navigation_choice_title">Set a navigation software</string>
+    <string name="navigation_choice_summary"></string>
 </resources>

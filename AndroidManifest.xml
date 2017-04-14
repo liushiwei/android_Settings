@@ -79,7 +79,9 @@
         android:resizeable="true"
         android:smallScreens="true"
         android:xlargeScreens="true" />
-
+ <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="20" />
     <application android:label="@string/settings_label"
             android:icon="@mipmap/ic_launcher_settings"
             android:taskAffinity=""

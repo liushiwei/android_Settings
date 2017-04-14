@@ -225,11 +225,9 @@
         <item name="preferenceBackgroundColor">@drawable/preference_background</item>
     </style>
 
-    <style name="Theme.AlertDialog" parent="@*android:style/Theme.Material.Light.Dialog.Alert">
+    <style name="Theme.AlertDialog" parent="@*android:style/Theme.Material.Dialog.Alert">
         <item name="android:windowSoftInputMode">adjustResize</item>
 
-        <!-- Explicitly override the background color. -->
-        <item name="android:colorBackground">@android:color/white</item>
 
         <!-- Used by the ActionBar -->
         <item name="android:colorPrimary">@color/theme_primary</item>
