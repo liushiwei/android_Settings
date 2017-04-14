@@ -26,26 +26,26 @@ public class NewSettings extends SettingsActivity {
     /*
     * Settings subclasses for launching independently.
     */
-    public static class BluetoothNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class WirelessNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class SimNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class TetherNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class VpnNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class DateTimeNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class StorageNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class WifiNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class WifiP2pNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class InputMethodAndLanguageNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class BluetoothSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class WirelessSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class SimSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class TetherSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class VpnSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class DateTimeSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class StorageSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class WifiSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class WifiP2pSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class InputMethodAndLanguageSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class KeyboardLayoutPickerActivity extends NewSettingsActivity { /* empty */ }
     public static class InputMethodAndSubtypeEnablerActivity extends NewSettingsActivity { /* empty */ }
-    public static class VoiceInputNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class SpellCheckersNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class VoiceInputSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class SpellCheckersSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class LocalePickerActivity extends NewSettingsActivity { /* empty */ }
-    public static class UserDictionaryNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class HomeNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class DisplayNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class DeviceInfoNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class ApplicationNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class UserDictionarySettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class HomeSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class DisplaySettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class DeviceInfoSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class ApplicationSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class ManageApplicationsActivity extends NewSettingsActivity { /* empty */ }
     public static class AppOpsSummaryActivity extends NewSettingsActivity {
         @Override
@@ -57,49 +57,49 @@ public class NewSettings extends SettingsActivity {
             }
     }
     public static class StorageUseActivity extends NewSettingsActivity { /* empty */ }
-    public static class DevelopmentNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class AccessibilityNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class CaptioningNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class AccessibilityInversionNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class AccessibilityContrastNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class AccessibilityDaltonizerNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class SecurityNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class UsageAccessNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class LocationNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class PrivacyNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class DevelopmentSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AccessibilitySettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class CaptioningSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AccessibilityInversionSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AccessibilityContrastSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AccessibilityDaltonizerSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class SecuritySettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class UsageAccessSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class LocationSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class PrivacySettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class RunningServicesActivity extends NewSettingsActivity { /* empty */ }
-    public static class ManageAccountsNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class ManageAccountsSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class PowerUsageSummaryActivity extends NewSettingsActivity { /* empty */ }
-    public static class BatterySaverNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class AccountSyncNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class AccountNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class BatterySaverSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AccountSyncSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AccountSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class AccountSyncSettingsInAddAccountActivity extends NewSettingsActivity { /* empty */ }
-    public static class CryptKeeperNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class DeviceAdminNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class CryptKeeperSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class DeviceAdminSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class DataUsageSummaryActivity extends NewSettingsActivity { /* empty */ }
-    public static class AdvancedWifiNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class SavedAccessPointsNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class TextToSpeechNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class AndroidBeamNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class WifiDisplayNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class DreamNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AdvancedWifiSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class SavedAccessPointsSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class TextToSpeechSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AndroidBeamSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class WifiDisplaySettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class DreamSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class NotificationStationActivity extends NewSettingsActivity { /* empty */ }
-    public static class UserNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class NotificationAccessNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class ConditionProviderNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class UsbNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class TrustedCredentialsNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class PaymentNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class PrintNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class PrintJobNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class ZenModeNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class NotificationNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class UserSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class NotificationAccessSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class ConditionProviderSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class UsbSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class TrustedCredentialsSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class PaymentSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class PrintSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class PrintJobSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class ZenModeSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class NotificationSettingsActivity extends NewSettingsActivity { /* empty */ }
     public static class NotificationAppListActivity extends NewSettingsActivity { /* empty */ }
-    public static class AppNotificationNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class OtherSoundNewSettingsActivity extends NewSettingsActivity { /* empty */ }
-    public static class QuickLaunchNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class AppNotificationSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class OtherSoundSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class QuickLaunchSettingsActivity extends NewSettingsActivity { /* empty */ }
 
     public static class TopLevelSettings extends NewSettingsActivity { /* empty */ }
-    public static class ApnNewSettingsActivity extends NewSettingsActivity { /* empty */ }
+    public static class ApnSettingsActivity extends NewSettingsActivity { /* empty */ }
 }
 

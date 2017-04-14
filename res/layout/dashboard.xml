@@ -19,7 +19,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:scrollbarStyle="outsideOverlay"
-    android:clipToPadding="false">
+    android:clipToPadding="false"
+    android:background="@android:color/black">
 
         <LinearLayout
                 android:id="@+id/dashboard_container"
@@ -31,7 +32,7 @@
                 android:paddingTop="@dimen/dashboard_padding_top"
                 android:paddingBottom="@dimen/dashboard_padding_bottom"
                 android:orientation="vertical"
-                android:background="#141220"
-                />
+                android:background="@android:color/black"
+		/>
 
 </ScrollView>

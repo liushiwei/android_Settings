@@ -152,6 +152,7 @@
          <item name="android:windowContentOverlay">@null</item>
          <item name="android:windowActionBar">false</item>
          <item name="android:windowNoTitle">true</item>
+         <item name="preferenceBackgroundColor">@android:color/black</item>
      </style>
 
     <style name="Theme.SubSettings" parent="Theme.Settings">

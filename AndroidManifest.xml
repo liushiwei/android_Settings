@@ -456,7 +456,7 @@
                 android:value="true" />
         </activity>
 
-        <activity android:name="Settings$DateTimeSettingsActivity"
+        <activity android:name="NewSettings$DateTimeSettingsActivity"
                 android:label="@string/date_and_time"
                 android:taskAffinity="">
             <intent-filter>
