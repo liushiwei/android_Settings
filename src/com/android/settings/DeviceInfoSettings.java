@@ -19,8 +19,10 @@ package com.android.settings;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
 import android.os.Binder;
 import android.os.Build;
@@ -81,6 +83,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
+    private static final String KEY_MCU_VERSION = "mcu_version";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -95,6 +98,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         addPreferencesFromResource(R.xml.device_info_settings);
 
         setStringSummary(KEY_FIRMWARE_VERSION, Build.VERSION.RELEASE);
+        setStringSummary(KEY_MCU_VERSION, getMcuVersion());
         findPreference(KEY_FIRMWARE_VERSION).setEnabled(true);
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
@@ -190,6 +194,21 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
                 Context.MODE_PRIVATE).getBoolean(DevelopmentSettings.PREF_SHOW,
                         android.os.Build.TYPE.equals("eng")) ? -1 : TAPS_TO_BE_A_DEVELOPER;
         mDevHitToast = null;
+    }
+    
+    private String  getMcuVersion(){
+    	Context otherAppsContext;
+		try {
+			otherAppsContext = getActivity().createPackageContext("com.george.canbus", Context.CONTEXT_IGNORE_SECURITY);
+			SharedPreferences sharedPreferences = otherAppsContext.getSharedPreferences("canbus", Context.MODE_WORLD_READABLE);  
+	    	String version = sharedPreferences.getString("version", "---");  
+	    	return version;
+		} catch (NameNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}  
+    	  return "---";
+    	
     }
 
     @Override

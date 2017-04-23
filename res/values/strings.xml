@@ -6060,4 +6060,5 @@
      <string name="old_settings">高级</string>
      <string name="navigation_choice_title">Set a navigation software</string>
     <string name="navigation_choice_summary"></string>
+    <string name="mcu_version">MCU Version</string>
 </resources>

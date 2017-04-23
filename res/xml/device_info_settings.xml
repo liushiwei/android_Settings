@@ -131,5 +131,11 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/selinux_status"
                 android:summary="@string/selinux_status_enforcing"/>
+        
+         <!-- SELinux status information -->
+        <Preference android:key="mcu_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mcu_version"
+                android:summary="@string/device_info_default"/>
 
 </PreferenceScreen>
