@@ -27,7 +27,8 @@ public class CarSettings extends SettingsPreferenceFragment {
 		public boolean onPreferenceClick(Preference preference) {
 
 			if (preference == mCarSettings) {
-				getActivity().sendBroadcast(new Intent("com.george.settings.car_settings"));
+//				getActivity().sendBroadcast(new Intent("com.george.settings.car_settings"));
+				getActivity().startActivity(new Intent("com.george.canbus.intent.action.OptionsActivity"));
 			}
 			return false;
 		}

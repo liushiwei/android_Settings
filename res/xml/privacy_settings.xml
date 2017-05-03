@@ -58,10 +58,11 @@
 
         <!-- Factory reset -->
         <PreferenceScreen
+            android:key="master_clear"
             android:title="@string/master_clear_title"
             android:summary="@string/master_clear_summary"
             settings:keywords="@string/keywords_factory_data_reset"
-            android:fragment="com.android.settings.MasterClear" />
+            />
 
     </PreferenceCategory>
     
@@ -71,9 +72,9 @@
                 settings:keywords="@string/mcu_upgrade">
     </PreferenceScreen>
     <PreferenceScreen
-                android:key="car_settings"
-                android:title="@string/car_settings"
-                settings:keywords="@string/car_settings">
+                android:key="ota_update"
+                android:title="@string/ota_update"
+                settings:keywords="@string/ota_update">
     </PreferenceScreen>
 
 </PreferenceScreen>

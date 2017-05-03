@@ -16,6 +16,15 @@
 
 package com.android.settings;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.android.settings.search.BaseSearchIndexProvider;
+import com.android.settings.search.Indexable;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.backup.IBackupManager;
@@ -24,27 +33,22 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.FileUtils;
+import android.os.Handler;
 import android.os.Process;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.Preference;
-import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings;
 import android.util.Log;
-
-import com.android.settings.search.BaseSearchIndexProvider;
-import com.android.settings.search.Indexable;
-import com.android.settings.search.Indexable.SearchIndexProvider;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Gesture lock pattern settings.
@@ -59,7 +63,9 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
     private static final String AUTO_RESTORE = "auto_restore";
     private static final String CONFIGURE_ACCOUNT = "configure_account";
     private static final String MCU_UPGRADE = "mcu_upgrade";
+    private static final String OTA_UPGRADE = "ota_update";
     private static final String BACKUP_INACTIVE = "backup_inactive";
+    private static final String MASTER_CLEAR_TITLE = "master_clear";
     private static final String PERSONAL_DATA_CATEGORY = "personal_data_category";
     private static final String TAG = "PrivacySettings";
     private IBackupManager mBackupManager;
@@ -68,10 +74,15 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
     private Dialog mConfirmDialog;
     private PreferenceScreen mConfigure;
     private PreferenceScreen mMCUUpgrade;
+    private PreferenceScreen mMasterClear;
+    private PreferenceScreen mOTAUpgrade;
     private boolean mEnabled;
 
     private static final int DIALOG_ERASE_BACKUP = 2;
+    private static final int DIALOG_MASTER_CLEAR = 3;
     private int mDialogType;
+    
+    private static final String RECOVERY_SYSTEM = "/data/recovery_system";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,10 +103,19 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
         mMCUUpgrade = (PreferenceScreen)screen.findPreference(MCU_UPGRADE);
         mMCUUpgrade.setOnPreferenceClickListener(mClickListener);
         
+        
+        mOTAUpgrade = (PreferenceScreen)screen.findPreference(OTA_UPGRADE);
+        mOTAUpgrade.setOnPreferenceClickListener(mClickListener);
+        
+        mMasterClear = (PreferenceScreen)screen.findPreference(MASTER_CLEAR_TITLE);
+        mMasterClear.setOnPreferenceClickListener(mClickListener);
+        
         mAutoRestore = (SwitchPreference) screen.findPreference(AUTO_RESTORE);
         mAutoRestore.setOnPreferenceChangeListener(preferenceChangeListener);
 
         mConfigure = (PreferenceScreen) screen.findPreference(CONFIGURE_ACCOUNT);
+        
+        
 
         ArrayList<String> keysToRemove = getNonVisibleKeys(getActivity());
         final int screenPreferenceCount = screen.getPreferenceCount();
@@ -124,6 +144,21 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
 		public boolean onPreferenceClick(Preference preference) {
 			 if(preference == mMCUUpgrade){
 		        	getActivity().sendBroadcast(new Intent("com.george.settings.mcu_update"));
+		        	return false;
+		        }
+			 if(preference == mMasterClear){
+				 mDialogType = DIALOG_MASTER_CLEAR;
+				 mConfirmDialog = new AlertDialog.Builder(getActivity()).setMessage(R.string.master_clear_confirm_title)
+			                .setTitle(R.string.backup_erase_dialog_title)
+			                .setPositiveButton(android.R.string.ok, PrivacySettings.this)
+			                .setNegativeButton(android.R.string.cancel, PrivacySettings.this)
+			                .show();
+				 return false;
+			 }
+			 if(preference == mOTAUpgrade){
+				 Intent intent = new Intent("com.george.intent.action.ota");
+				 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				 getActivity().startActivity(intent);
 		        }
 			return false;
 		}
@@ -253,8 +288,84 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
             }
             updateConfigureSummary();
         }
+		if (mDialogType == DIALOG_MASTER_CLEAR) {
+			if (which == DialogInterface.BUTTON_POSITIVE) {
+				File file = new File(RECOVERY_SYSTEM);
+				if (!file.exists()) {
+					try {
+						file.createNewFile();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					FileUtils.setPermissions(RECOVERY_SYSTEM, FileUtils.S_IRWXU | FileUtils.S_IRWXG | FileUtils.S_IRWXO,
+							-1, -1);
+				}
+				
+				String []  CMD= { "/system/bin/sync" };
+				try {
+					runcmd(CMD,"/");
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				new Handler().postDelayed(new Runnable() {
+
+					@Override
+					public void run() {
+						getActivity().sendBroadcast(new Intent("com.george.intent.reboot"));
+					}
+				}, 1500);
+
+			}
+		}
         mDialogType = 0;
     }
+
+	/**
+	 * 执行一个shell命令，并返回字符串值
+	 *
+	 * @param cmd
+	 *            命令名称&参数组成的数组（例如：{"/system/bin/cat", "/proc/version"}）
+	 * @param workdirectory
+	 *            命令执行路径（例如："system/bin/"）
+	 * @return 执行结果组成的字符串
+	 * @throws IOException
+	 */
+	public static synchronized String runcmd(String[] cmd, String workdirectory) throws IOException {
+		StringBuffer result = new StringBuffer();
+		try {
+			// 创建操作系统进程（也可以由Runtime.exec()启动）
+			// Runtime runtime = Runtime.getRuntime();
+			// Process proc = runtime.exec(cmd);
+			// InputStream inputstream = proc.getInputStream();
+			ProcessBuilder builder = new ProcessBuilder(cmd);
+			InputStream in = null;
+			// 设置一个路径（绝对路径了就不一定需要）
+			if (workdirectory != null) {
+				// 设置工作目录（同上）
+				builder.directory(new File(workdirectory));
+				// 合并标准错误和标准输出
+				builder.redirectErrorStream(true);
+				// 启动一个新进程
+				java.lang.Process process = builder.start();
+				// 读取进程标准输出流
+				in = process.getInputStream();
+				byte[] re = new byte[1024];
+				while (in.read(re) != -1) {
+					result = result.append(new String(re));
+				}
+			}
+			// 关闭输入流
+			if (in != null) {
+				in.close();
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return result.toString();
+	}
 
     /**
      * Informs the BackupManager of a change in backup state - if backup is disabled,

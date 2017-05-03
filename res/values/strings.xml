@@ -6061,4 +6061,6 @@
      <string name="navigation_choice_title">Set a navigation software</string>
     <string name="navigation_choice_summary"></string>
     <string name="mcu_version">MCU Version</string>
+    <string name="gps_test">GPS Test</string>
+    <string name="ota_update">OTA Update</string>
 </resources>

@@ -49,6 +49,7 @@ import android.os.UserManager;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -92,6 +93,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
      */
     public static final String PREF_SHOW = "show";
 
+    
+    private static final String GPS_TEST = "gps_test";
     private static final String ENABLE_ADB = "enable_adb";
     private static final String CLEAR_ADB_KEYS = "clear_adb_keys";
     private static final String ENABLE_TERMINAL = "enable_terminal";
@@ -238,6 +241,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private SwitchPreference mShowAllANRs;
 
     private PreferenceScreen mProcessStats;
+    
+    private PreferenceScreen mGPSTest;
+    
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
 
     private final ArrayList<SwitchPreference> mResetSwitchPrefs
@@ -375,6 +381,20 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
 
         mProcessStats = (PreferenceScreen) findPreference(PROCESS_STATS);
         mAllPrefs.add(mProcessStats);
+        
+        mGPSTest = (PreferenceScreen) findPreference(GPS_TEST);
+        mAllPrefs.add(mGPSTest);
+        mGPSTest.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			
+			@Override
+			public boolean onPreferenceClick(Preference arg0) {
+				Intent intent  = new Intent();
+				intent.setClassName("com.chartcross.gpstest","com.chartcross.gpstest.GPSTest");
+				intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				startActivity(intent);
+				return false;
+			}
+		});
     }
 
     private ListPreference addListPreference(String prefKey) {

@@ -21,9 +21,14 @@
             android:title="@string/audio_channel"
             android:entries="@array/audio_channel"
             android:entryValues="@array/audio_channel_values" />
+           <PreferenceScreen android:key="gps_test"
+            android:title="@string/gps_test"
+           	>
+            </PreferenceScreen>
         <PreferenceScreen android:key="change_usb_mode"
             android:title="@string/change_usb_mode"
            >
+         
     </PreferenceScreen>
     
     <com.android.settings.BugreportPreference
