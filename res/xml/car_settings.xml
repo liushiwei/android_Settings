@@ -28,5 +28,11 @@
                 android:title="@string/car_settings"
                 settings:keywords="@string/car_settings">
     </PreferenceScreen>
+    
+     <PreferenceScreen
+                android:key="reverse_settings"
+                android:title="@string/reverse_settings"
+                settings:keywords="@string/reverse_settings">
+    </PreferenceScreen>
 
 </PreferenceScreen>

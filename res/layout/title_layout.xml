@@ -21,13 +21,10 @@
                 android:text="@string/back_btn_title"
                 android:textSize="25dp"
                 systemui:keyCode="4"
+                android:drawablePadding="5dp"
+                android:drawableBottom="@drawable/left_line"
                 />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:src="@drawable/left_line" />
         </LinearLayout>
 
         <TextView
@@ -52,13 +49,11 @@
                 android:textSize="25dp"
                 systemui:keyCode="3"
                 systemui:keyRepeat="false"
+                android:drawablePadding="5dp"
+                android:drawableBottom="@drawable/right_line"
                 />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:src="@drawable/right_line" />
+            
         </LinearLayout>
     </LinearLayout>
 

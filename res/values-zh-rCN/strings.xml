@@ -2517,4 +2517,7 @@
     <string name="navigation_choice_summary">选择你要使用的导航软件</string>
     <string name="mcu_version">MCU 版本号</string>
     <string name="ota_update">OTA 升级</string>
+    <string name="reverse_settings">倒车设置</string>
+    <string name="back_btn_title">BACK/返回</string>
+     <string name="home_btn_title">HOME/主页</string>
 </resources>

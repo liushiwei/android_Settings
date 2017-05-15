@@ -6055,12 +6055,13 @@
 	<string name="audio_channel">声道切换</string>
     <string name="change_usb_mode">USB工作模式切换</string>
     <string name="abbrev_wday_month_day_no_year">yyyyEEEMMMMd</string>
-     <string name="back_btn_title">BACK/返回</string>
-     <string name="home_btn_title">HOME/主页</string>
-     <string name="old_settings">高级</string>
+     <string name="back_btn_title">BACK</string>
+     <string name="home_btn_title">HOME</string>
      <string name="navigation_choice_title">Set a navigation software</string>
     <string name="navigation_choice_summary"></string>
     <string name="mcu_version">MCU Version</string>
     <string name="gps_test">GPS Test</string>
     <string name="ota_update">OTA Update</string>
+    <string name="reverse_settings">Reverse Settings</string>
+    <string name="old_settings">More</string>
 </resources>
