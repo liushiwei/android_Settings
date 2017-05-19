@@ -30,7 +30,10 @@
            >
          
     </PreferenceScreen>
-    
+     <SwitchPreference
+                android:key="wifi_adb"
+                android:title="@string/wifi_adb"
+                />
     <com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"

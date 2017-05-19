@@ -96,6 +96,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     
     private static final String GPS_TEST = "gps_test";
     private static final String ENABLE_ADB = "enable_adb";
+    private static final String WIFI_ADB = "wifi_adb";
     private static final String CLEAR_ADB_KEYS = "clear_adb_keys";
     private static final String ENABLE_TERMINAL = "enable_terminal";
     private static final String KEEP_SCREEN_ON = "keep_screen_on";
@@ -186,6 +187,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private boolean mDontPokeProperties;
 
     private SwitchPreference mEnableAdb;
+    private SwitchPreference mWifiAdb;
     private Preference mClearAdbKeys;
     private SwitchPreference mEnableTerminal;
     private Preference mBugreport;
@@ -283,6 +285,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 findPreference(DEBUG_DEBUGGING_CATEGORY_KEY);
 
         mEnableAdb = findAndInitSwitchPref(ENABLE_ADB);
+        mWifiAdb = findAndInitSwitchPref(WIFI_ADB); 
         mClearAdbKeys = findPreference(CLEAR_ADB_KEYS);
         if (!SystemProperties.getBoolean("ro.adb.secure", false)) {
             if (debugDebuggingCategory != null) {
@@ -1509,6 +1512,14 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             writeUseAwesomePlayerOptions();
         } else if (preference == mUSBAudio) {
             writeUSBAudioOptions();
+        } else if (preference == mWifiAdb) {
+        	if (mWifiAdb.isChecked()) {
+        		Log.e(TAG, "mWifiAdb is checked");
+        		SystemProperties.set("ctl.start", "start_wifi_adb");
+        	}else{
+        		Log.e(TAG, "mWifiAdb is not checked");
+        		SystemProperties.set("ctl.start", "stop_wifi_adb");
+        	}
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }

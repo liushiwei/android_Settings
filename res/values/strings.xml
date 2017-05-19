@@ -6064,4 +6064,5 @@
     <string name="ota_update">OTA Update</string>
     <string name="reverse_settings">Reverse Settings</string>
     <string name="old_settings">More</string>
+    <string name="wifi_adb">Op</string>
 </resources>
