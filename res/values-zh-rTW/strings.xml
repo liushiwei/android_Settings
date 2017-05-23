@@ -2516,4 +2516,13 @@
     <string name="imei_information_summary" msgid="2074095606556565233">"IMEI 相關資訊"</string>
     <string name="slot_number" msgid="3762676044904653577">"(插槽 <xliff:g id="SLOT_NUM">%1$d</xliff:g>)"</string>
     <string name="old_settings">高級</string>
+     <string name="car_settings">車輛設定</string>
+	<string name="mcu_upgrade">MCU 升級</string>
+	<string name="navigation_choice_title">導航應用選擇</string>
+    <string name="navigation_choice_summary">選擇你要使用的導航軟件</string>
+    <string name="mcu_version">MCU 版本號</string>
+    <string name="ota_update">OTA 升級</string>
+    <string name="reverse_settings">倒車設置</string>
+    <string name="back_btn_title">BACK/返回</string>
+     <string name="home_btn_title">HOME/主頁</string>
 </resources>
