@@ -67,6 +67,9 @@ public class NavigationChoice extends Preference {
 				// Non-system app
 				flag = true;
 			}
+			if("com.autonavi.amapauto".equals(appInfo.activityInfo.packageName)){
+				flag = true;
+			}
 			if (flag) {
 				mApps.add(appInfo);
 			}
