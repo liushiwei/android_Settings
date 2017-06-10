@@ -25,6 +25,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.android.settings.R;
+import com.android.settings.SettingsActivity;
 import com.android.settings.Utils;
 
 public class NewDashboardTileView extends FrameLayout implements View.OnClickListener {
@@ -34,6 +35,8 @@ public class NewDashboardTileView extends FrameLayout implements View.OnClickLis
     private ImageView mImageView;
     private TextView mTitleTextView;
     private TextView mStatusTextView;
+    
+    private Context mContext;
 
     private int mColSpan = DEFAULT_COL_SPAN;
 
@@ -55,6 +58,7 @@ public class NewDashboardTileView extends FrameLayout implements View.OnClickLis
         setOnClickListener(this);
         setBackgroundResource(R.drawable.dashboard_tile_background);
         setFocusable(true);
+        mContext = context;
     }
 
     public TextView getTitleTextView() {
@@ -85,8 +89,10 @@ public class NewDashboardTileView extends FrameLayout implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if (mTile.fragment != null) {
-            Utils.startWithFragment(getContext(), mTile.fragment, mTile.fragmentArguments, null, 0,
-                    mTile.titleRes, mTile.getTitle(getResources()));
+        	SettingsActivity activity = (SettingsActivity) mContext;
+        	activity.switchToSubFragment( mTile.fragment, mTile.fragmentArguments);
+//            Utils.startWithFragment(getContext(), mTile.fragment, mTile.fragmentArguments, null, 0,
+//                    mTile.titleRes, mTile.getTitle(getResources()));
         } else if (mTile.intent != null) {
             getContext().startActivity(mTile.intent);
         }

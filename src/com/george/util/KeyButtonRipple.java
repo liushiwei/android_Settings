@@ -14,7 +14,7 @@
  * limitations under the License
  */
 
-package com.carit.util;
+package com.george.util;
 
 import java.util.ArrayList;
 import java.util.HashSet;

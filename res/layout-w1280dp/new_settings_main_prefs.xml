@@ -17,20 +17,18 @@
 */
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:systemui="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black" >
+    android:background="@drawable/main_bg"  >
 
-    <include android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/title_layout"/>
+    
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="63dp"
+        android:layout_height="340dp"
         android:orientation="vertical" 
-        android:layout_below="@+id/title">
+        android:layout_centerInParent="true"
+       >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,7 +48,7 @@
                 android:id="@+id/main_content"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="?attr/preferenceBackgroundColor" />
+                android:background="@android:color/transparent" />
         </LinearLayout>
 
         <RelativeLayout
@@ -92,31 +90,37 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:orientation="vertical" >
-
-        <ImageView
-            android:layout_width="match_parent"
+     
+        <com.george.util.KeyButtonView
+            android:id="@+id/home"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/bottom_line" />
+            android:src="@drawable/home"
+            systemui:keyCode="4"
+            systemui:keyRepeat="false" 
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="30dp"
+            android:paddingBottom="5dp"
+            />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_vertical"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp" >
-            <com.george.util.Clock
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="35dp" />
-        </LinearLayout>
-    </LinearLayout>
-
+        <com.george.util.KeyButtonView
+            android:id="@+id/back"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back"
+           android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/home"
+            systemui:keyCode="4"
+            systemui:keyRepeat="false" 
+             android:layout_marginLeft="60dp"
+            android:paddingBottom="5dp"/>
+        <com.george.util.Clock android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:textSize="32dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:paddingRight="35dp"
+            android:paddingBottom="15dp"
+            android:layout_gravity="center"/>
 </RelativeLayout>

@@ -380,6 +380,10 @@ public class SettingsActivity extends Activity
     public SwitchBar getSwitchBar() {
         return mSwitchBar;
     }
+    
+    public void setSwitchBar(SwitchBar bar) {
+        mSwitchBar = bar;
+    }
 
     public List<DashboardCategory> getDashboardCategories(boolean forceRefresh) {
         if (forceRefresh || mCategories.size() == 0) {
@@ -971,6 +975,30 @@ public class SettingsActivity extends Activity
         } else if (title != null) {
             transaction.setBreadCrumbTitle(title);
         }
+        transaction.commitAllowingStateLoss();
+        getFragmentManager().executePendingTransactions();
+        return f;
+    }
+    
+    /**
+     * Switch to a specific Fragment with taking care of validation, Title and BackStack
+     */
+    public Fragment switchToSubFragment(String fragmentName, Bundle args) {
+       
+        Fragment f = Fragment.instantiate(this, fragmentName, args);
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.sub_content, f);
+//        if (withTransition) {
+//            TransitionManager.beginDelayedTransition(mContent);
+//        }
+//        if (addToBackStack) {
+//            transaction.addToBackStack(SettingsActivity.BACK_STACK_PREFS);
+//        }
+//        if (titleResId > 0) {
+//            transaction.setBreadCrumbTitle(titleResId);
+//        } else if (title != null) {
+//            transaction.setBreadCrumbTitle(title);
+//        }
         transaction.commitAllowingStateLoss();
         getFragmentManager().executePendingTransactions();
         return f;
