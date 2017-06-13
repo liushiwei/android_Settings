@@ -97,4 +97,8 @@ public class NewDashboardTileView extends FrameLayout implements View.OnClickLis
             getContext().startActivity(mTile.intent);
         }
     }
+    
+    public DashboardTile getTile(){
+    	return mTile;
+    }
 }

@@ -132,7 +132,9 @@ public class NewDashboardSummary extends Fragment {
             final int tilesCount = category.getTilesCount();
             for (int i = 0; i < tilesCount; i++) {
                 DashboardTile tile = category.getTile(i);
-
+                if(n==0&&i==0){
+                	activity.switchToSubFragment(tile.fragment , tile.fragmentArguments);
+                }
                 NewDashboardTileView tileView = new NewDashboardTileView(context);
                 updateTileView(context, res, tile, tileView.getImageView(),
                         tileView.getTitleTextView(), tileView.getStatusTextView());
@@ -141,10 +143,12 @@ public class NewDashboardSummary extends Fragment {
 
                 categoryContent.addView(tileView);
             }
-
+          
             // Add the category
             mDashboard.addView(categoryView);
         }
+       
+
         long delta = System.currentTimeMillis() - start;
         Log.d(LOG_TAG, "rebuildUI took: " + delta + " ms");
     }
