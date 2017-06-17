@@ -6053,6 +6053,7 @@
 	<string name="mcu_upgrade">MCU Upgrade</string>
 	
 	<string name="audio_channel">声道切换</string>
+	<string name="tp_setting">触摸屏设置</string>
     <string name="change_usb_mode">USB工作模式切换</string>
     <string name="abbrev_wday_month_day_no_year">yyyyEEEMMMMd</string>
      <string name="back_btn_title">BACK</string>
@@ -6065,4 +6066,5 @@
     <string name="reverse_settings">Reverse Settings</string>
     <string name="old_settings">More</string>
     <string name="wifi_adb">Op</string>
+    <string name="file_not_exist">File not exit!</string>
 </resources>
