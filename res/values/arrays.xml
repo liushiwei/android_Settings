@@ -1270,4 +1270,16 @@
         <item >1</item>
         <item >2</item>
     </string-array>
+    <string-array name="tp_type" >
+        <item >中触800×480</item>
+        <item >亿点通800×480</item>
+        <item >Happy1280*480</item>
+        <item >从U盘内加载</item>
+    </string-array>
+    <string-array name="tp_type_values" >
+        <item >/system/lib/modules/goodix_ZC_800_480.ko</item>
+        <item >/system/lib/modules/goodix_YDT_800_480.ko</item>
+        <item >/system/lib/modules/goodix_hp_1280_480.ko</item>
+        <item >/storage/usbdisk2/goodix.ko</item>
+    </string-array>
 </resources>
