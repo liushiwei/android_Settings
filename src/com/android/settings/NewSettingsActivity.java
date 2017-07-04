@@ -1172,12 +1172,12 @@ public class NewSettingsActivity extends Activity
                             .asInterface(ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE));
                     try {
                         if (!netManager.isBandwidthControlEnabled()) {
-                            
+                            removeTile = true;
                         }
                     } catch (RemoteException e) {
                         // ignored
                     }
-                    removeTile = true;
+                    //removeTile = true;
                 } else if (id == R.id.battery_settings) {
                     // Remove battery settings when battery is not available. (e.g. TV)
 

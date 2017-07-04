@@ -25,8 +25,10 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 	private static final String CAR_SETTINGS = "car_settings";
 
 	private static final String REVERSE_SETTINGS = "reverse_settings";
+	private static final String SHUTDOWN_SETTINGS = "shutdown_settings";
 	private PreferenceScreen mCarSettings;
 	private PreferenceScreen mReverseSettings;
+	private PreferenceScreen mShutdownSettings;
 	private ListPreference mTP_change ;
 	private int mTipCount = 5;
 
@@ -40,7 +42,8 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 		mReverseSettings = (PreferenceScreen) screen.findPreference(REVERSE_SETTINGS);
 		mReverseSettings.setOnPreferenceClickListener(mClickListener);
 		mTP_change = (ListPreference) findPreference("tp_type");
-		
+		mShutdownSettings= (PreferenceScreen) screen.findPreference(SHUTDOWN_SETTINGS);
+		// mShutdownSettings.setOnPreferenceClickListener(mClickListener);
 		
 	}
 	
@@ -98,6 +101,16 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 			if (preference == mReverseSettings) {
 				getActivity().sendBroadcast(new Intent("com.george.settings.reverse_settings"));
 			}
+			if (mShutdownSettings == preference) {
+				Intent intent = new Intent(Intent.ACTION_REQUEST_SHUTDOWN);
+
+				intent.putExtra(Intent.EXTRA_KEY_CONFIRM,false);
+
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+				startActivity(intent);
+			}
+			
 			return false;
 		}
 
@@ -113,6 +126,7 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 			try {
 				FileOutputStream out = new FileOutputStream(new File(TP_FILE));
 				out.write(path.getBytes());
+				out.write('\n');
 				out.close();
 				SystemProperties.set("ctl.start", "change_tp");
 			} catch (IOException e) {
@@ -127,6 +141,7 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 					try {
 						FileOutputStream out = new FileOutputStream(new File(TP_FILE));
 						out.write("/storage/usbdisk3/goodix.ko".getBytes());
+						out.write('\n');
 						out.close();
 						SystemProperties.set("ctl.start", "change_tp");
 					} catch (IOException e) {
@@ -140,6 +155,7 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 					try {
 						FileOutputStream out = new FileOutputStream(new File(TP_FILE));
 						out.write("/storage/usbdisk4/goodix.ko".getBytes());
+						out.write('\n');
 						out.close();
 						SystemProperties.set("ctl.start", "change_tp");
 					} catch (IOException e) {
@@ -153,6 +169,7 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 					try {
 						FileOutputStream out = new FileOutputStream(new File(TP_FILE));
 						out.write("/storage/usbdisk5/goodix.ko".getBytes());
+						out.write('\n');
 						out.close();
 						SystemProperties.set("ctl.start", "change_tp");
 					} catch (IOException e) {
@@ -166,6 +183,7 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 					try {
 						FileOutputStream out = new FileOutputStream(new File(TP_FILE));
 						out.write("/storage/usbdisk1/goodix.ko".getBytes());
+						out.write('\n');
 						out.close();
 						SystemProperties.set("ctl.start", "change_tp");
 					} catch (IOException e) {

@@ -34,5 +34,12 @@
                 android:title="@string/reverse_settings"
                 settings:keywords="@string/reverse_settings">
     </PreferenceScreen>
+    <!--
+      <PreferenceScreen
+                android:key="shutdown_settings"
+                android:title="@string/shutdown"
+                settings:keywords="@string/shutdown">
+    </PreferenceScreen>
+     -->
 
 </PreferenceScreen>
