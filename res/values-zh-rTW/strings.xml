@@ -2389,7 +2389,7 @@
     <string name="media_volume_option_title" msgid="2811531786073003825">"媒體音量"</string>
     <string name="alarm_volume_option_title" msgid="8219324421222242421">"鬧鐘音量"</string>
     <string name="ring_volume_option_title" msgid="6767101703671248309">"鈴聲音量"</string>
-    <string name="notification_volume_option_title" msgid="6064656124416882130">"通知音量"</string>
+    <string name="notification_volume_option_title" msgid="6064656124416882130">"導航音量"</string>
     <string name="zen_mode_settings_title" msgid="7014915558669122902">"干擾"</string>
     <string name="zen_mode_option_title" msgid="5061978632306007914">"收到來電和通知時"</string>
     <string name="zen_mode_option_off" msgid="3167702608910820883">"一律允許干擾"</string>

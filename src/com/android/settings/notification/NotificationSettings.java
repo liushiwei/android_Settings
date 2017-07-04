@@ -123,17 +123,10 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                 com.android.internal.R.drawable.ic_audio_vol_mute);
 //        initVolumePreference(KEY_ALARM_VOLUME, AudioManager.STREAM_ALARM,
 //                com.android.internal.R.drawable.ic_audio_alarm_mute);
-//        if (mVoiceCapable) {
-//            mRingOrNotificationPreference =
-//                    initVolumePreference(KEY_RING_VOLUME, AudioManager.STREAM_RING,
-//                            com.android.internal.R.drawable.ic_audio_ring_notif_mute);
-//            sound.removePreference(sound.findPreference(KEY_NOTIFICATION_VOLUME));
-//        } else {
-//            mRingOrNotificationPreference =
-//                    initVolumePreference(KEY_NOTIFICATION_VOLUME, AudioManager.STREAM_NOTIFICATION,
-//                            com.android.internal.R.drawable.ic_audio_ring_notif_mute);
-//            sound.removePreference(sound.findPreference(KEY_RING_VOLUME));
-//        }
+     
+            mRingOrNotificationPreference =
+                    initVolumePreference(KEY_NOTIFICATION_VOLUME, AudioManager.STREAM_NOTIFICATION,
+                            com.android.internal.R.drawable.ic_audio_ring_notif_mute);
 //        initRingtones(sound);
 //        initVibrateWhenRinging(sound);
 //
@@ -155,7 +148,7 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         //lookupRingtoneNames();
         mSettingsObserver.register(true);
         mReceiver.register(true);
-        //updateRingOrNotificationPreference();
+        updateRingOrNotificationPreference();
         //updateEffectsSuppressor();
         for (VolumeSeekBarPreference volumePref : mVolumePrefs) {
             volumePref.onActivityResume();
