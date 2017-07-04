@@ -136,6 +136,19 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 			return true;
 		} else {
 			if(path.startsWith("/storage")){
+				ko = new File("/storage/usbdisk2/goodix.ko");
+				if (ko.exists()) {
+					try {
+						FileOutputStream out = new FileOutputStream(new File(TP_FILE));
+						out.write(("/storage/usbdisk2/goodix.ko"+'\n').getBytes());
+						out.close();
+						SystemProperties.set("ctl.start", "change_tp");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					return true;
+				}
 				ko = new File("/storage/usbdisk3/goodix.ko");
 				if (ko.exists()) {
 					try {
