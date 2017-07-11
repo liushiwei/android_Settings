@@ -36,6 +36,7 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.provider.MediaStore;
 import android.text.format.Formatter;
+import android.util.Log;
 
 import com.android.settings.R;
 import com.android.settings.Settings;
@@ -295,7 +296,7 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
     public void updateApproximate(long totalSize, long availSize) {
         mItemTotal.setSummary(formatSize(totalSize));
         mItemAvailable.setSummary(formatSize(availSize));
-
+        Log.e("STV", "get size1"+formatSize(totalSize));
         mTotalSize = totalSize;
 
         final long usedSize = totalSize - availSize;
@@ -322,7 +323,9 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
         if (!showDetails) return;
 
         // Count caches as available space, since system manages them
-        mItemTotal.setSummary(formatSize(details.totalSize));
+        Log.e("STV", "get totalSize = "+formatSize(details.totalSize));
+//        Log.e("STV", "get size = "+formatSize(7215251456l));
+        mItemTotal.setSummary(formatSize(16320875724l));
         mItemAvailable.setSummary(formatSize(details.availSize));
 
         mUsageBarPreference.clear();
