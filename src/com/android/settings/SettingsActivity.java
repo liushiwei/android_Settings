@@ -1212,7 +1212,6 @@ public class SettingsActivity extends Activity
                     } catch (RemoteException e) {
                         // ignored
                     }
-                    removeTile = true;
                 } else if (id == R.id.battery_settings) {
                     // Remove battery settings when battery is not available. (e.g. TV)
 

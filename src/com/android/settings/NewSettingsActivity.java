@@ -1172,7 +1172,7 @@ public class NewSettingsActivity extends Activity
                             .asInterface(ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE));
                     try {
                         if (!netManager.isBandwidthControlEnabled()) {
-                            removeTile = true;
+                            
                         }
                     } catch (RemoteException e) {
                         // ignored

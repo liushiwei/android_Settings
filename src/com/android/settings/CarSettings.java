@@ -13,6 +13,7 @@ import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -27,10 +28,14 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 	private static final String REVERSE_SETTINGS = "reverse_settings";
 	private static final String SHUTDOWN_SETTINGS = "shutdown_settings";
 	private PreferenceScreen mCarSettings;
+	private Preference mOTGSettings;
+	private Preference mMCURESETSettings;
 	private PreferenceScreen mReverseSettings;
 	private PreferenceScreen mShutdownSettings;
 	private ListPreference mTP_change ;
-	private int mTipCount = 5;
+	private int mTipCount = 2;
+	
+	private final static String BOARDCAST_COMMAND = "com.george.canbox.intent.command";
 
 	@Override
 	public void onCreate(Bundle icicle) {
@@ -57,13 +62,30 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 
 			@Override
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
-				final PreferenceScreen screen = getPreferenceScreen();
-				mTP_change=new ListPreference(getActivity());//构建一个子Preference，待添加到容器中
-				mTP_change.setTitle(R.string.tp_setting);//设置title
-				mTP_change.setEntries(R.array.tp_type);
-				mTP_change.setEntryValues(R.array.tp_type_values);;
-			    screen.addPreference(mTP_change);//添加到容器中
-				mTP_change.setOnPreferenceChangeListener(CarSettings.this);
+				mTipCount--;
+				if(mTipCount==0){
+					Log.e(TAG, "add mOTGSettings");
+					final PreferenceScreen screen = getPreferenceScreen();
+					
+					mOTGSettings = new Preference(getActivity());
+					mOTGSettings.setTitle("OTG Enable");
+					mOTGSettings.setOnPreferenceClickListener(mClickListener);
+					screen.addPreference(mOTGSettings);
+					mMCURESETSettings = new Preference(getActivity());
+					mMCURESETSettings.setTitle("MCU Reset");
+					mMCURESETSettings.setOnPreferenceClickListener(mClickListener);
+					screen.addPreference(mMCURESETSettings);
+				}
+				if(mTP_change==null){
+					final PreferenceScreen screen = getPreferenceScreen();
+					mTP_change=new ListPreference(getActivity());//构建一个子Preference，待添加到容器中
+					mTP_change.setTitle(R.string.tp_setting);//设置title
+					mTP_change.setEntries(R.array.tp_type);
+					mTP_change.setEntryValues(R.array.tp_type_values);;
+					screen.addPreference(mTP_change);//添加到容器中
+					mTP_change.setOnPreferenceChangeListener(CarSettings.this);
+				}
+				
 				return false;
 			}
 			
@@ -109,6 +131,18 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
 				startActivity(intent);
+			}
+			
+			if (mOTGSettings == preference) {
+				Intent intent= new Intent(BOARDCAST_COMMAND);
+				intent.putExtra("command", 1);
+				getActivity().sendBroadcast(intent);
+			}
+			
+			if (mMCURESETSettings == preference) {
+				Intent intent= new Intent(BOARDCAST_COMMAND);
+				intent.putExtra("command", 2);
+				getActivity().sendBroadcast(intent);
 			}
 			
 			return false;
