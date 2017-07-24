@@ -2518,6 +2518,7 @@
     <string name="old_settings">高級</string>
      <string name="car_settings">車輛設定</string>
 	<string name="mcu_upgrade">MCU 升級</string>
+	<string name="can_upgrade">CAN 升級</string>
 	<string name="navigation_choice_title">導航應用選擇</string>
     <string name="navigation_choice_summary">選擇你要使用的導航軟件</string>
     <string name="mcu_version">MCU 版本號</string>

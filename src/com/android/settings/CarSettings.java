@@ -22,11 +22,10 @@ import android.widget.Toast;
 
 public class CarSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 	private static final String TAG = "CarSettings";
-
 	private static final String CAR_SETTINGS = "car_settings";
-
 	private static final String REVERSE_SETTINGS = "reverse_settings";
 	private static final String SHUTDOWN_SETTINGS = "shutdown_settings";
+	private static final String KEY_BRIGHTNESS = "brightness";
 	private PreferenceScreen mCarSettings;
 	private Preference mOTGSettings;
 	private Preference mMCURESETSettings;
@@ -34,6 +33,7 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 	private PreferenceScreen mShutdownSettings;
 	private ListPreference mTP_change ;
 	private int mTipCount = 2;
+	private Preference mBrightnessPreference;
 	
 	private final static String BOARDCAST_COMMAND = "com.george.canbox.intent.command";
 
@@ -49,7 +49,8 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 		mTP_change = (ListPreference) findPreference("tp_type");
 		mShutdownSettings= (PreferenceScreen) screen.findPreference(SHUTDOWN_SETTINGS);
 		// mShutdownSettings.setOnPreferenceClickListener(mClickListener);
-		
+		mBrightnessPreference = findPreference(KEY_BRIGHTNESS);
+        mBrightnessPreference.setOnPreferenceClickListener(mClickListener);
 	}
 	
 	
@@ -144,7 +145,9 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 				intent.putExtra("command", 2);
 				getActivity().sendBroadcast(intent);
 			}
-			
+			if(preference == mBrightnessPreference){
+	        	getActivity().sendBroadcast(new Intent("com.george.settings.back_light"));
+	        }
 			return false;
 		}
 
@@ -170,6 +173,32 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 			return true;
 		} else {
 			if(path.startsWith("/storage")){
+				ko = new File("/storage/sdcard0/goodix.ko");
+				if (ko.exists()) {
+					try {
+						FileOutputStream out = new FileOutputStream(new File(TP_FILE));
+						out.write(("/storage/sdcard0/goodix.ko"+'\n').getBytes());
+						out.close();
+						SystemProperties.set("ctl.start", "change_tp");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					return true;
+				}
+				ko = new File("/storage/sdcard1/goodix.ko");
+				if (ko.exists()) {
+					try {
+						FileOutputStream out = new FileOutputStream(new File(TP_FILE));
+						out.write(("/storage/sdcard1/goodix.ko"+'\n').getBytes());
+						out.close();
+						SystemProperties.set("ctl.start", "change_tp");
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					return true;
+				}
 				ko = new File("/storage/usbdisk2/goodix.ko");
 				if (ko.exists()) {
 					try {

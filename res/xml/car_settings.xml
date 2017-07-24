@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2009-2011 The Android Open Source Project
+<!--
+     Copyright (C) 2009-2011 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -15,31 +16,36 @@
 -->
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-        android:title="@string/privacy_settings_title">
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/privacy_settings_title" >
 
-  <com.android.settings.NavigationChoice
-                android:key="navigation_choice" android:title="@string/navigation_choice_title"
-                android:summary="@string/navigation_choice_summary" 
-                />
-    
+    <com.android.settings.NavigationChoice
+        android:key="navigation_choice"
+        android:summary="@string/navigation_choice_summary"
+        android:title="@string/navigation_choice_title" />
+
     <PreferenceScreen
-                android:key="car_settings"
-                android:title="@string/car_settings"
-                settings:keywords="@string/car_settings">
+        android:key="brightness"
+        android:title="@string/brightness"
+        settings:keywords="@string/keywords_display_brightness_level" >
     </PreferenceScreen>
-    
-     <PreferenceScreen
-                android:key="reverse_settings"
-                android:title="@string/reverse_settings"
-                settings:keywords="@string/reverse_settings">
+    <PreferenceScreen
+        android:key="car_settings"
+        android:title="@string/car_settings"
+        settings:keywords="@string/car_settings" >
     </PreferenceScreen>
+    <PreferenceScreen
+        android:key="reverse_settings"
+        android:title="@string/reverse_settings"
+        settings:keywords="@string/reverse_settings" >
+    </PreferenceScreen>
+
     <!--
       <PreferenceScreen
                 android:key="shutdown_settings"
                 android:title="@string/shutdown"
                 settings:keywords="@string/shutdown">
     </PreferenceScreen>
-     -->
+    -->
 
 </PreferenceScreen>

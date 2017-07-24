@@ -16,7 +16,10 @@
 
 package com.android.settings;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -59,10 +62,12 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
     // Vendor specific
     private static final String GSETTINGS_PROVIDER = "com.google.settings";
     private static final String BACKUP_CATEGORY = "backup_category";
+	private static final String UPGRADE_CATEGORY = "upgrade_category";
     private static final String BACKUP_DATA = "backup_data";
     private static final String AUTO_RESTORE = "auto_restore";
     private static final String CONFIGURE_ACCOUNT = "configure_account";
     private static final String MCU_UPGRADE = "mcu_upgrade";
+    private static final String CAN_UPGRADE = "can_upgrade";
     private static final String OTA_UPGRADE = "ota_update";
     private static final String BACKUP_INACTIVE = "backup_inactive";
     private static final String MASTER_CLEAR_TITLE = "master_clear";
@@ -74,6 +79,7 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
     private Dialog mConfirmDialog;
     private PreferenceScreen mConfigure;
     private PreferenceScreen mMCUUpgrade;
+    private PreferenceScreen mCANUpgrade;
     private PreferenceScreen mMasterClear;
     private PreferenceScreen mOTAUpgrade;
     private boolean mEnabled;
@@ -83,6 +89,7 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
     private int mDialogType;
     
     private static final String RECOVERY_SYSTEM = "/data/recovery_system";
+    private static final String PROPERTIESFILE = "/data/system/.properties_file";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -136,6 +143,15 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
             }
         }
         updateToggles();
+        int canbox_id = getCanboxId();
+        if(canbox_id != 1){
+        	PreferenceCategory upgradeCategory = (PreferenceCategory) findPreference(UPGRADE_CATEGORY);
+        	mCANUpgrade = (PreferenceScreen)screen.findPreference(CAN_UPGRADE);
+        	upgradeCategory.removePreference(mCANUpgrade);
+        }else{
+        	mCANUpgrade = (PreferenceScreen)screen.findPreference(CAN_UPGRADE);
+            mCANUpgrade.setOnPreferenceClickListener(mClickListener);
+        }
     }
     
     private OnPreferenceClickListener mClickListener = new OnPreferenceClickListener(){
@@ -146,6 +162,12 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
 		        	getActivity().sendBroadcast(new Intent("com.george.settings.mcu_update"));
 		        	return false;
 		        }
+			 if(preference == mCANUpgrade){
+				 	Intent intent = new Intent("com.george.settings.mcu_update");
+				 	intent.putExtra("device_id", 1);
+		        	getActivity().sendBroadcast(intent);
+		        	return false;
+		      }
 			 if(preference == mMasterClear){
 				 mDialogType = DIALOG_MASTER_CLEAR;
 				 mConfirmDialog = new AlertDialog.Builder(getActivity()).setMessage(R.string.master_clear_confirm_title)
@@ -460,5 +482,40 @@ public class PrivacySettings extends SettingsPreferenceFragment implements
             nonVisibleKeys.add(BACKUP_CATEGORY);
         }
         return nonVisibleKeys;
+    }
+    
+    private int getCanboxId(){
+    	File file = new File(PROPERTIESFILE);
+        if(file.exists()){
+
+            Log.d(TAG,"-------------get File-----------"+PROPERTIESFILE );
+            BufferedReader buf;
+            String source=null;
+            int id =-1;
+            try {
+                buf = new BufferedReader(new FileReader(file));
+                do{
+                    source =buf.readLine();
+                    Log.d(TAG,"-------------get line-----------"+source );
+                    if(source !=null&&source.startsWith("canbox_id=")){
+                         Log.d(TAG,"-------------get car_id-----------" );
+                        String car_id = source.substring(source.indexOf("=")+1);
+                        Log.d(TAG,"-------------get car_id-----------"+car_id );
+                        id = Integer.valueOf(car_id);
+                    }
+                }while(source!=null);
+                buf.close();
+                return id;
+            } catch (FileNotFoundException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }
+        
+        return -1;
+
     }
 }
