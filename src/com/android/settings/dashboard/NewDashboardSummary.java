@@ -21,6 +21,7 @@ import java.util.List;
 import com.android.settings.NewSettingsActivity;
 import com.android.settings.R;
 import com.android.settings.SettingsActivity;
+import com.android.settings.widget.SwitchBar;
 
 import android.app.Fragment;
 import android.content.BroadcastReceiver;
@@ -104,10 +105,11 @@ public class NewDashboardSummary extends Fragment {
             Log.w(LOG_TAG, "Cannot build the DashboardSummary UI yet as the Fragment is not added");
             return;
         }
-
+      
         long start = System.currentTimeMillis();
         final Resources res = getResources();
-
+        SettingsActivity activity = (SettingsActivity) context;
+        activity.setSwitchBar((SwitchBar)getView().findViewById(R.id.switch_bar));
         mDashboard.removeAllViews();
 
         List<DashboardCategory> categories =
@@ -130,7 +132,9 @@ public class NewDashboardSummary extends Fragment {
             final int tilesCount = category.getTilesCount();
             for (int i = 0; i < tilesCount; i++) {
                 DashboardTile tile = category.getTile(i);
-
+//                if(n==0&&i==0){
+//                	activity.switchToSubFragment(tile.fragment , tile.fragmentArguments);
+//                }
                 NewDashboardTileView tileView = new NewDashboardTileView(context);
                 updateTileView(context, res, tile, tileView.getImageView(),
                         tileView.getTitleTextView(), tileView.getStatusTextView());
@@ -139,10 +143,12 @@ public class NewDashboardSummary extends Fragment {
 
                 categoryContent.addView(tileView);
             }
-
+          
             // Add the category
             mDashboard.addView(categoryView);
         }
+       
+
         long delta = System.currentTimeMillis() - start;
         Log.d(LOG_TAG, "rebuildUI took: " + delta + " ms");
     }

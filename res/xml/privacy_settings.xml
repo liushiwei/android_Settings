@@ -65,16 +65,23 @@
             />
 
     </PreferenceCategory>
-    
-    <PreferenceScreen
-                android:key="mcu_upgrade"
-                android:title="@string/mcu_upgrade"
-                settings:keywords="@string/mcu_upgrade">
-    </PreferenceScreen>
-    <PreferenceScreen
-                android:key="ota_update"
-                android:title="@string/ota_update"
-                settings:keywords="@string/ota_update">
-    </PreferenceScreen>
+    <PreferenceCategory android:key="upgrade_category"
+            >
+	    <PreferenceScreen
+	                android:key="mcu_upgrade"
+	                android:title="@string/mcu_upgrade"
+	                settings:keywords="@string/mcu_upgrade">
+	    </PreferenceScreen>
+	    <PreferenceScreen
+	                android:key="can_upgrade"
+	                android:title="@string/can_upgrade"
+	                settings:keywords="@string/can_upgrade">
+	    </PreferenceScreen>
+	    <PreferenceScreen
+	                android:key="ota_update"
+	                android:title="@string/ota_update"
+	                settings:keywords="@string/ota_update">
+	    </PreferenceScreen>
+    </PreferenceCategory>
 
 </PreferenceScreen>

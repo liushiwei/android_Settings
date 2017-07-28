@@ -5671,7 +5671,7 @@
     <string name="ring_volume_option_title">Ring volume</string>
 
     <!-- Sound & notification > Sound section: Title for the option managing notification volume. [CHAR LIMIT=30] -->
-    <string name="notification_volume_option_title">Notification volume</string>
+    <string name="notification_volume_option_title">Navigation volume</string>
 
     <!-- Sound & notification > Sound section: Title for the Interruptions option and associated settings page. [CHAR LIMIT=30] -->
     <string name="zen_mode_settings_title">Interruptions</string>
@@ -6051,6 +6051,7 @@
    <string name="slot_number">(Slot<xliff:g id="slot_num">%1$d</xliff:g>)</string>
 	<string name="car_settings">Automobile Settings</string>
 	<string name="mcu_upgrade">MCU Upgrade</string>
+	<string name="can_upgrade">CAN Upgrade</string>
 	
 	<string name="audio_channel">声道切换</string>
 	<string name="tp_setting">触摸屏设置</string>
@@ -6067,4 +6068,5 @@
     <string name="old_settings">More</string>
     <string name="wifi_adb">Op</string>
     <string name="file_not_exist">File not exit!</string>
+    <string name="shutdown">Shutdown</string>
 </resources>

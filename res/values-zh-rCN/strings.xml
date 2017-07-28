@@ -2385,7 +2385,7 @@
     <string name="media_volume_option_title" msgid="2811531786073003825">"媒体音量"</string>
     <string name="alarm_volume_option_title" msgid="8219324421222242421">"闹钟音量"</string>
     <string name="ring_volume_option_title" msgid="6767101703671248309">"铃声音量"</string>
-    <string name="notification_volume_option_title" msgid="6064656124416882130">"通知音量"</string>
+    <string name="notification_volume_option_title" msgid="6064656124416882130">"导航音量"</string>
     <string name="zen_mode_settings_title" msgid="7014915558669122902">"打扰"</string>
     <string name="zen_mode_option_title" msgid="5061978632306007914">"收到来电和通知时"</string>
     <string name="zen_mode_option_off" msgid="3167702608910820883">"一律允许打扰"</string>
@@ -2513,6 +2513,7 @@
     <string name="slot_number" msgid="3762676044904653577">"（插槽<xliff:g id="SLOT_NUM">%1$d</xliff:g>）"</string>
     <string name="car_settings">车辆设定</string>
 	<string name="mcu_upgrade">MCU 升级</string>
+	<string name="can_upgrade">CAN 升级</string>
 	<string name="navigation_choice_title">导航应用选择</string>
     <string name="navigation_choice_summary">选择你要使用的导航软件</string>
     <string name="mcu_version">MCU 版本号</string>
