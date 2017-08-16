@@ -30,7 +30,14 @@
                 android:icon="@drawable/ic_settings_wireless"
                 />
         
-
+  <!-- Data Usage -->
+        <dashboard-tile
+                android:id="@+id/tether_settings_title_wifi"
+                android:title="@string/tether_settings_title_wifi"
+                android:fragment="com.android.settings.TetherSettings"
+                android:icon="@drawable/ic_settings_ap"
+                />
+        
         <!-- Data Usage -->
         <dashboard-tile
                 android:id="@+id/data_usage_settings"
