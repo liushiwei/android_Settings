@@ -2385,7 +2385,7 @@
     <string name="status_failed_to_write" msgid="8072752734686294718">"無法將資料寫入 NFC 標記。如果問題持續發生，請嘗試使用其他標記"</string>
     <string name="status_tag_not_writable" msgid="2511611539977682175">"無法寫入 NFC 標記，請使用其他標記。"</string>
     <string name="default_sound" msgid="8821684447333687810">"預設音效"</string>
-    <string name="notification_settings" msgid="8791730980212496561">"音效通知"</string>
+    <string name="notification_settings" msgid="8791730980212496561">"音量"</string>
     <string name="media_volume_option_title" msgid="2811531786073003825">"媒體音量"</string>
     <string name="alarm_volume_option_title" msgid="8219324421222242421">"鬧鐘音量"</string>
     <string name="ring_volume_option_title" msgid="6767101703671248309">"鈴聲音量"</string>

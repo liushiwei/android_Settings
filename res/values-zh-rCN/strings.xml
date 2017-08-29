@@ -2381,7 +2381,7 @@
     <string name="status_failed_to_write" msgid="8072752734686294718">"无法将数据写入NFC标签。如果该问题一直存在，请尝试使用其他标签"</string>
     <string name="status_tag_not_writable" msgid="2511611539977682175">"无法将数据写入NFC标签，请使用其他标签。"</string>
     <string name="default_sound" msgid="8821684447333687810">"默认铃声"</string>
-    <string name="notification_settings" msgid="8791730980212496561">"提示音和通知"</string>
+    <string name="notification_settings" msgid="8791730980212496561">"音量"</string>
     <string name="media_volume_option_title" msgid="2811531786073003825">"媒体音量"</string>
     <string name="alarm_volume_option_title" msgid="8219324421222242421">"闹钟音量"</string>
     <string name="ring_volume_option_title" msgid="6767101703671248309">"铃声音量"</string>
