@@ -29,6 +29,7 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 	private PreferenceScreen mCarSettings;
 	private Preference mOTGSettings;
 	private Preference mMCURESETSettings;
+	private Preference mCanboxSettings;
 	private PreferenceScreen mReverseSettings;
 	private PreferenceScreen mShutdownSettings;
 	private ListPreference mTP_change ;
@@ -76,6 +77,10 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 					mMCURESETSettings.setTitle("MCU Reset");
 					mMCURESETSettings.setOnPreferenceClickListener(mClickListener);
 					screen.addPreference(mMCURESETSettings);
+					mCanboxSettings = new Preference(getActivity());
+					mCanboxSettings.setTitle("Canbox Debug");
+					mCanboxSettings.setOnPreferenceClickListener(mClickListener);
+					screen.addPreference(mCanboxSettings);
 				}
 				if(mTP_change==null){
 					final PreferenceScreen screen = getPreferenceScreen();
@@ -143,6 +148,12 @@ public class CarSettings extends SettingsPreferenceFragment implements OnPrefere
 			if (mMCURESETSettings == preference) {
 				Intent intent= new Intent(BOARDCAST_COMMAND);
 				intent.putExtra("command", 2);
+				getActivity().sendBroadcast(intent);
+			}
+			
+			if (mCanboxSettings == preference) {
+				Intent intent= new Intent(BOARDCAST_COMMAND);
+				intent.putExtra("command", 6);
 				getActivity().sendBroadcast(intent);
 			}
 			if(preference == mBrightnessPreference){

@@ -434,20 +434,20 @@ public class StorageVolumePreferenceCategory extends PreferenceCategory {
             intent = new Intent(Intent.ACTION_MANAGE_PACKAGE_STORAGE);
             intent.setClass(getContext(), Settings.ManageApplicationsActivity.class);
         } else if (pref == mItemDownloads) {
-            intent = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS).putExtra(
-                    DownloadManager.INTENT_EXTRAS_SORT_BY_SIZE, true);
+//            intent = new Intent(DownloadManager.ACTION_VIEW_DOWNLOADS).putExtra(
+//                    DownloadManager.INTENT_EXTRAS_SORT_BY_SIZE, true);
         } else if (pref == mItemMusic) {
-            intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.setType("audio/mp3");
+//            intent = new Intent(Intent.ACTION_GET_CONTENT);
+//            intent.setType("audio/mp3");
         } else if (pref == mItemDcim) {
-            intent = new Intent(Intent.ACTION_VIEW);
-            intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
-            // TODO Create a Videos category, MediaStore.Video.Media.EXTERNAL_CONTENT_URI
-            intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//            intent = new Intent(Intent.ACTION_VIEW);
+//            intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
+//            // TODO Create a Videos category, MediaStore.Video.Media.EXTERNAL_CONTENT_URI
+//            intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         } else if (pref == mItemMisc) {
-            Context context = getContext().getApplicationContext();
-            intent = new Intent(context, MiscFilesHandler.class);
-            intent.putExtra(StorageVolume.EXTRA_STORAGE_VOLUME, mVolume);
+//            Context context = getContext().getApplicationContext();
+//            intent = new Intent(context, MiscFilesHandler.class);
+//            intent.putExtra(StorageVolume.EXTRA_STORAGE_VOLUME, mVolume);
         }
 
         return intent;
