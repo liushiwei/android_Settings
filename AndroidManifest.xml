@@ -189,11 +189,11 @@
         </activity>
 
         <!-- Top-level settings -->
-
         <activity android:name="Settings$WifiSettingsActivity"
                 android:taskAffinity=""
                 android:label="@string/wifi_settings"
-                android:configChanges="orientation|keyboardHidden|screenSize">
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@style/Theme.Settings">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.settings.WIFI_SETTINGS" />
@@ -206,6 +206,7 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/wifi_settings" />
         </activity>
+
 
         <!-- Keep compatibility with old shortcuts. -->
         <activity-alias android:name=".wifi.WifiSettings"
