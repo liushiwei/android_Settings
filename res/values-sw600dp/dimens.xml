@@ -87,4 +87,6 @@
     <dimen name="wifi_assistant_padding_start_end">24dp</dimen>
     <dimen name="wifi_assistant_padding">25dp</dimen>
     <dimen name="wifi_assistant_text_padding">24dp</dimen>
+    <dimen name="key_button_back_margin_left">60dp</dimen>
+    <dimen name="dashboard_height">400dp</dimen>
 </resources>

@@ -231,4 +231,6 @@
     <dimen name="color_swatch_size">16dp</dimen>
     <dimen name="color_swatch_stroke_width">4dp</dimen>
 	<dimen name="key_button_ripple_max_width">95dp</dimen>
+	<dimen name="key_button_back_margin_left">60dp</dimen>
+	<dimen name="dashboard_height">340dp</dimen>
 </resources>

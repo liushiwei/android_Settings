@@ -15,60 +15,89 @@
      limitations under the License.
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:systemui="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/black">
+    android:background="@drawable/main_bg" >
 
-    <include android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/title_layout"/>
-
-    <ScrollView
-        android:id="@+id/dashboard"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:layout_marginBottom="63dp"
-        android:layout_below="@+id/title">
+        android:gravity="center"
+        android:orientation="horizontal" >
 
-        <LinearLayout
-            android:id="@+id/dashboard_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center_horizontal"
-            android:background="@android:color/black"
-            android:orientation="vertical"
-            android:paddingBottom="@dimen/dashboard_padding_bottom"
-            android:paddingEnd="@dimen/dashboard_padding_end"
-            android:paddingStart="@dimen/dashboard_padding_start"
-            android:paddingTop="@dimen/dashboard_padding_top" />
-    </ScrollView>
- <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:layout_gravity="bottom"
-            android:orientation="vertical" 
-            android:layout_alignParentBottom="true">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/bottom_line" />
+        <ScrollView
+            android:id="@+id/dashboard"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dashboard_height"
+            android:layout_weight="1"
+            android:clipToPadding="false"
+            android:paddingLeft="10dp" >
 
             <LinearLayout
+                android:id="@+id/dashboard_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center_vertical"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp" >
-				<com.george.util.Clock
-	                    android:layout_width="0dp"
-	                    android:layout_height="wrap_content"
-	                    android:layout_weight="1"
-	                    android:gravity="center"
-	                    android:textSize="35dp" />
-	              
-            </LinearLayout>
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dashboard_padding_bottom"
+                android:paddingEnd="@dimen/dashboard_padding_end"
+                android:paddingStart="@dimen/dashboard_padding_start"
+                android:paddingTop="@dimen/dashboard_padding_top" />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dashboard_height"
+            android:layout_weight="1"
+            android:orientation="vertical" >
+
+            <com.android.settings.widget.SwitchBar
+                android:id="@+id/switch_bar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="@android:color/darker_gray"
+                android:theme="?attr/switchBarTheme" />
+
+            <FrameLayout
+                android:id="@+id/sub_content"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:background="@android:color/transparent" />
         </LinearLayout>
+    </LinearLayout>
+
+    <com.george.util.KeyButtonView
+        android:id="@+id/home"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="30dp"
+        android:paddingBottom="5dp"
+        android:src="@drawable/home"
+        systemui:keyCode="4"
+        systemui:keyRepeat="false" />
+
+    <com.george.util.KeyButtonView
+        android:id="@+id/back"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/key_button_back_margin_left"
+        android:layout_toRightOf="@+id/home"
+        android:paddingBottom="5dp"
+        android:src="@drawable/back"
+        systemui:keyCode="4"
+        systemui:keyRepeat="false" />
+
+    <com.george.util.Clock
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:paddingBottom="27dp"
+        android:textSize="32dp" />
+
 </RelativeLayout>
